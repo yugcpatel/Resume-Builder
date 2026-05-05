@@ -1,0 +1,188 @@
+{
+    "personal_info": {
+        "full_name": "Yug Chiragkumar Patel",
+        "email": "ycp2@sfu.ca",
+        "phone": "+1 604 603 7976",
+        "linkedin": "https://www.linkedin.com/in/yug-c-patel/",
+        "github": "https://github.com/yugcpatel"
+    },
+    "education": [
+        {
+            "institution": "Simon Fraser University",
+            "location": "Burnaby, BC, Canada",
+            "degree": "Bachelor of Science",
+            "major": "Computing Science",
+            "start_date": "Jan 2026",
+            "end_date": "Dec 2027 (Expected)",
+            "gpa": "3.83",
+            "courses": [
+                "CMPT 105W - Social Issues and Communication Strategies",
+                "MACM 101 - Discrete Mathematics I",
+                "EVSC 100 - Environmental Science",
+                "IS 105 - Around the World Through Film",
+                "CMPT 210 - Probability and Computing (In Progress)",
+                "CMPT 276 - Intro to Software Engineering (In Progress)",
+                "CMPT 295 - Intro to Computer Systems (In Progress)"
+            ]
+        },
+        {
+            "institution": "Langara College",
+            "location": "Vancouver, BC, Canada",
+            "degree": "Associate of Science",
+            "major": "Computer Science",
+            "start_date": "Jan 2023",
+            "end_date": "Dec 2025",
+            "gpa": "4.08 / 4.33",
+            "honors": [
+                "Dean’s Honour Roll (Fall 2024)"
+            ],
+            "courses": [
+                "CPSC 120 - Intro to Programming I",
+                "CPSC 125 - Programming II",
+                "CPSC 225 - Data Structures and Programming",
+                "CPSC 165 - Internet and Web Development",
+                "CPSC 2600 - Full Stack Development",
+                "CPSC 354 - Database Systems I",
+                "CPSC 365 - Multimedia Systems",
+                "MATH 151 - Calculus I",
+                "MATH 152 - Calculus II",
+                "MATH 240 - Linear Algebra",
+                "PHYS 100 - Introduction to Physics"
+            ]
+        }
+    ],
+    "technical_skills": {
+        "languages": [
+            "Java",
+            "Python",
+            "C++",
+            "JavaScript",
+            "Bash"
+        ],
+        "backend": [
+            "Node.js",
+            "Express",
+            "REST APIs",
+            "Microservices",
+            "Authentication",
+            "Error Handling"
+        ],
+        "databases": [
+            "MongoDB",
+            "SQL",
+            "MySQL",
+            "Data Modeling",
+            "Query Optimization"
+        ],
+        "cloud_devops": [
+            "Google Cloud Platform (GCP)",
+            "CI/CD",
+            "Automation",
+            "Linux",
+            "Git",
+            "Containerization"
+        ],
+        "core_cs": [
+            "Data Structures",
+            "Algorithms",
+            "Object-Oriented Programming",
+            "System Design",
+            "Distributed Systems"
+        ],
+        "tools": [
+            "Git",
+            "GitHub",
+            "Postman",
+            "Docker",
+            "VS Code"
+        ]
+    },
+    "experience": [
+        {
+            "title": "Full Stack Developer (Volunteer)",
+            "company": "Tomkulak Consortium",
+            "location": "Vancouver, BC",
+            "start_date": "Jan 2026",
+            "end_date": "Present",
+            "bullets": [
+                "Designed a geospatial database schema using MySQL to manage infrastructure assets and network data, improving data organization and scalability across multiple datasets",
+                "Developed a modular React application with structured architecture and implemented routing across key views, improving navigation and reducing code complexity",
+                "Collaborated with cross-functional teams to standardize data structures, improving system integration and reducing inconsistencies across development modules",
+                "Managed and maintained codebase using Git, enabling efficient collaboration and minimizing merge conflicts in a multi-developer environment"
+            ]
+        },
+        {
+            "title": "Work Associate",
+            "company": "Real Canadian Superstore",
+            "location": "Surrey, BC",
+            "start_date": "Aug 2023",
+            "end_date": "Present",
+            "bullets": [
+                "Provided technical support for automated checkout and POS systems, resolving hardware and software issues and reducing system downtime by approximately 40%",
+                "Collaborated with IT teams, supervisors, and operations staff to improve system reliability and data accuracy, enhancing overall store efficiency",
+                "Maintained operational performance in a fast-paced environment through strong attention to detail and rapid issue resolution",
+                "Monitored system performance and escalated recurring issues, contributing to preventive maintenance and continuous improvement strategies",
+                "Trained and onboarded new staff on system usage and operational procedures, improving team productivity and consistency"
+            ]
+        }
+    ],
+    "projects": [
+        {
+            "name": "World Fun Facts",
+            "type": "Full-Stack MERN Application",
+            "start_date": "Aug 2025",
+            "end_date": "Dec 2025",
+            "link": "https://worldfunfact.netlify.app",
+            "bullets": [
+                "Designed and deployed a full-stack MERN application using React, Node.js, Express, and MongoDB to deliver dynamic country-based content",
+                "Built RESTful APIs supporting CRUD operations and scalable data models, improving backend performance and reliability",
+                "Integrated Google Gemini API to automate content generation, reducing manual effort by approximately 80%",
+                "Deployed application using cloud hosting and environment-based configuration, ensuring stable production performance and maintainability"
+            ]
+        },
+        {
+            "name": "Data Structures & Algorithms Practice",
+            "type": "Personal Project",
+            "start_date": "Apr 2024",
+            "end_date": "Aug 2025",
+            "bullets": [
+                "Solved 80+ algorithmic problems across arrays, graphs, heaps, and dynamic programming",
+                "Optimized solutions using time and space complexity techniques including O(n log n) and O(1)",
+                "Applied data structures and system design patterns to simulate real-world problem scenarios"
+            ]
+        },
+        {
+            "name": "Google Cloud Arcade Labs",
+            "type": "Cloud Engineering Practice",
+            "start_date": "Jun 2023",
+            "end_date": "Aug 2023",
+            "bullets": [
+                "Automated cloud infrastructure provisioning using Python scripts to deploy and monitor resources",
+                "Implemented logging, monitoring, and resource management strategies to improve system reliability",
+                "Applied CI/CD workflows and infrastructure-as-code principles in cloud environments"
+            ]
+        }
+    ],
+    "certifications": [
+        {
+            "name": "CompTIA Security+",
+            "date": "Jan 2025",
+            "details": [
+                "Covered threat detection, risk assessment, and vulnerability analysis",
+                "Applied encryption, authentication, and network security protocols",
+                "Developed understanding of security compliance, incident response, and system protection strategies"
+            ]
+        }
+    ],
+    "additional_information": {
+        "problem_solving": [
+            "Solved 80+ LeetCode problems focused on algorithms and data structures"
+        ],
+        "interests": [
+            "System design",
+            "Scalable backend systems",
+            "Cloud infrastructure",
+            "Security and reliability engineering"
+        ]
+    }
+}
