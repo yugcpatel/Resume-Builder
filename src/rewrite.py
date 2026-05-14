@@ -42,47 +42,54 @@ CRITICAL RULES:
     if not payload_to_rewrite:
         return ranked_resume
 
-    prompt = f"""
-{system_prompt}
-
-Job Requirements:
-{job_req_str}
-
-Items to Rewrite:
-{json.dumps(payload_to_rewrite, indent=2)}
-
-Respond ONLY with the rewritten JSON object matching the exact structure above. Do not include markdown blocks like ```json.
-"""
-    
     from utils import generate_content_with_fallback
     import time
     
     rewritten_resume = dict(ranked_resume)
     
-    try:
-        logging.info("Rewriting all bullets in a single optimized API call...")
-        response = generate_content_with_fallback(client, prompt, temperature=0.1)
-        content = response.text.strip()
-        if content.startswith('```json'):
-            content = content[7:-3]
-        elif content.startswith('```'):
-            content = content[3:-3]
+    def rewrite_section(section_name, items):
+        if not items:
+            return items
             
-        rewritten_payload = json.loads(content)
-        
-        # Merge back into the original resume structure
-        if 'experience' in rewritten_payload:
-            for i, exp in enumerate(rewritten_payload['experience']):
-                if i < len(rewritten_resume.get('experience', [])):
-                    rewritten_resume['experience'][i]['bullets'] = exp.get('bullets', [])
-                    
-        if 'projects' in rewritten_payload:
-            for i, proj in enumerate(rewritten_payload['projects']):
-                if i < len(rewritten_resume.get('projects', [])):
-                    rewritten_resume['projects'][i]['bullets'] = proj.get('bullets', [])
-                    
-    except Exception as e:
-        logging.error(f"Failed to rewrite bullets: {e}")
-        return ranked_resume
+        prompt = f"""
+{system_prompt}
+
+Job Requirements:
+{job_req_str}
+
+Items to Rewrite ({section_name}):
+{json.dumps(items, indent=2)}
+
+Respond ONLY with the rewritten JSON array containing the items exactly as structured above. Do not include markdown blocks like ```json.
+"""
+        try:
+            logging.info(f"Rewriting {len(items)} {section_name} items in a batched API call...")
+            time.sleep(2) # brief pause to prevent rate limiting
+            response = generate_content_with_fallback(client, prompt, temperature=0.1)
+            content = response.text.strip()
+            if content.startswith('```json'):
+                content = content[7:-3]
+            elif content.startswith('```'):
+                content = content[3:-3]
+                
+            rewritten_items = json.loads(content)
+            return rewritten_items
+        except Exception as e:
+            logging.error(f"Failed to rewrite {section_name}: {e}")
+            return items
+
+    # Rewrite Experience
+    if 'experience' in payload_to_rewrite and payload_to_rewrite['experience']:
+        rewritten_exp = rewrite_section('experience', payload_to_rewrite['experience'])
+        for i, exp in enumerate(rewritten_exp):
+            if isinstance(exp, dict) and i < len(rewritten_resume.get('experience', [])):
+                rewritten_resume['experience'][i]['bullets'] = exp.get('bullets', [])
+
+    # Rewrite Projects
+    if 'projects' in payload_to_rewrite and payload_to_rewrite['projects']:
+        rewritten_proj = rewrite_section('projects', payload_to_rewrite['projects'])
+        for i, proj in enumerate(rewritten_proj):
+            if isinstance(proj, dict) and i < len(rewritten_resume.get('projects', [])):
+                rewritten_resume['projects'][i]['bullets'] = proj.get('bullets', [])
 
     return rewritten_resume

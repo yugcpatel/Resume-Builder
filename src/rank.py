@@ -9,7 +9,7 @@ def get_embeddings(texts, client):
     clean_texts = [str(t).replace("\n", " ") for t in texts]
     try:
         response = client.models.embed_content(
-            model="text-embedding-004",
+            model="gemini-embedding-2",
             contents=clean_texts,
             config=types.EmbedContentConfig(task_type="RETRIEVAL_DOCUMENT")
         )
