@@ -34,7 +34,7 @@
             "end_date": "Dec 2025",
             "gpa": "4.08 / 4.33",
             "honors": [
-                "Dean’s Honour Roll (Fall 2024)"
+                "Dean's Honour Roll (Fall 2024)"
             ],
             "courses": [
                 "CPSC 120 - Intro to Programming I",
@@ -44,6 +44,7 @@
                 "CPSC 2600 - Full Stack Development",
                 "CPSC 354 - Database Systems I",
                 "CPSC 365 - Multimedia Systems",
+                "STAT 1181 - Introduction to Statistics using R",
                 "MATH 151 - Calculus I",
                 "MATH 152 - Calculus II",
                 "MATH 240 - Linear Algebra",
@@ -57,6 +58,7 @@
             "Python",
             "C++",
             "JavaScript",
+            "R",
             "Bash"
         ],
         "backend": [
@@ -89,12 +91,22 @@
             "System Design",
             "Distributed Systems"
         ],
+        "data_analysis": [
+            "R",
+            "Statistical Analysis",
+            "Data Visualization",
+            "Hypothesis Testing",
+            "Regression Modeling",
+            "Probability Distributions",
+            "RStudio"
+        ],
         "tools": [
             "Git",
             "GitHub",
             "Postman",
             "Docker",
-            "VS Code"
+            "VS Code",
+            "RStudio"
         ]
     },
     "experience": [
