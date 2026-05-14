@@ -105,6 +105,17 @@ def generate_latex(resume_data, template_content):
     
     return latex_out
 
+def generate_cover_letter_latex(cl_data, template_content):
+    if not cl_data:
+        return template_content
+        
+    latex_out = template_content
+    for key, value in cl_data.items():
+        placeholder = f"{{{{{key}}}}}"
+        latex_out = latex_out.replace(placeholder, escape_latex(str(value)))
+        
+    return latex_out
+
 def compile_latex(tex_path, output_dir):
     import shutil
     try:

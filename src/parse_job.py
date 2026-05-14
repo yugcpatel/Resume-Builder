@@ -23,14 +23,9 @@ JSON Format:
     "responsibilities": ["resp1", "resp2"]
 }}
 """
+    from utils import generate_content_with_fallback
     try:
-        response = client.models.generate_content(
-            model='gemini-2.5-flash',
-            contents=prompt,
-            config=types.GenerateContentConfig(
-                temperature=0.0
-            )
-        )
+        response = generate_content_with_fallback(client, prompt, temperature=0.0)
         content = response.text.strip()
         # Clean up markdown if present
         if content.startswith('```json'):

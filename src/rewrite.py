@@ -37,17 +37,12 @@ Current Bullets:
 Rewrite these bullets to better match the job requirements following the CRITICAL RULES.
 Return a valid JSON list of strings. Do not include any markdown blocks, just the JSON array.
 """
+        from utils import generate_content_with_fallback
         import time
         try:
             logging.info(f"Waiting 13 seconds to respect API rate limits (5 RPM)...")
             time.sleep(13)
-            response = client.models.generate_content(
-                model='gemini-2.5-flash',
-                contents=prompt,
-                config=types.GenerateContentConfig(
-                    temperature=0.1
-                )
-            )
+            response = generate_content_with_fallback(client, prompt, temperature=0.1)
             content = response.text.strip()
             if content.startswith('```json'):
                 content = content[7:-3]

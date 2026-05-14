@@ -34,6 +34,13 @@ def main():
     output_dir = os.path.join(base_dir, 'output')
     os.makedirs(output_dir, exist_ok=True)
     
+    # Check user preference
+    print("\nWhat would you like to generate?")
+    print("1: Resume only")
+    print("2: Resume + Cover Letter")
+    choice = input("Enter option (1 or 2): ").strip()
+    generate_cl = (choice == "2")
+    
     # 1. Parse Job Description
     logging.info("Parsing job description...")
     job_text = read_file(job_file)
@@ -53,30 +60,56 @@ def main():
     tailored_resume = rewrite_resume(ranked_resume, job_reqs)
     
     # 5. Generate LaTeX
-    logging.info("Generating LaTeX...")
+    logging.info("Generating Resume LaTeX...")
     template_content = read_file(template_path)
     latex_content = generate_latex(tailored_resume, template_content)
     
     company_name = job_reqs.get('company_name', '').strip()
+    short_company_name = ""
     if company_name:
         clean_company_name = "".join(c for c in company_name if c.isalnum() or c in (' ', '-')).strip()
-        # Ensure it's a short company name by taking the first word if it's long
         short_company_name = clean_company_name.split()[0] if clean_company_name else ""
-        if short_company_name:
-            file_name = f'resume {short_company_name}.tex'
-        else:
-            file_name = 'resume.tex'
+        
+    if short_company_name:
+        file_name = f'resume {short_company_name}.tex'
     else:
         file_name = 'resume.tex'
         
     tex_out_path = os.path.join(output_dir, file_name)
     write_file(tex_out_path, latex_content)
     
-    # 6. Compile PDF
-    logging.info("Compiling PDF...")
+    # 6. Compile Resume PDF
+    logging.info("Compiling Resume PDF...")
     compile_latex(tex_out_path, output_dir)
     pdf_file = file_name.replace('.tex', '.pdf')
-    logging.info(f"Done! Check {output_dir}/{pdf_file}")
+    logging.info(f"Resume Done! Check {output_dir}/{pdf_file}")
+
+    # 7. Generate Cover Letter if requested
+    if generate_cl:
+        from cover_letter import generate_cover_letter_data
+        from latex_gen import generate_cover_letter_latex
+        
+        cl_template_path = os.path.join(base_dir, 'data', 'cover_letter_template.tex')
+        cl_template_content = read_file(cl_template_path)
+        
+        logging.info("Generating Cover Letter Content...")
+        cl_data = generate_cover_letter_data(tailored_resume, job_reqs)
+        
+        logging.info("Generating Cover Letter LaTeX...")
+        cl_latex_content = generate_cover_letter_latex(cl_data, cl_template_content)
+        
+        if short_company_name:
+            cl_file_name = f'cover_letter {short_company_name}.tex'
+        else:
+            cl_file_name = 'cover_letter.tex'
+            
+        cl_tex_out_path = os.path.join(output_dir, cl_file_name)
+        write_file(cl_tex_out_path, cl_latex_content)
+        
+        logging.info("Compiling Cover Letter PDF...")
+        compile_latex(cl_tex_out_path, output_dir)
+        cl_pdf_file = cl_file_name.replace('.tex', '.pdf')
+        logging.info(f"Cover Letter Done! Check {output_dir}/{cl_pdf_file}")
 
 if __name__ == "__main__":
     main()

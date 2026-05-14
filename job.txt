@@ -1,39 +1,49 @@
-Position: IT Network Software/AI Development - Co-op/Intern
+The Opportunity
 
-Number of Positions: 4
+Olympic Industries is excited to offer a highly motivated and passionate individual the opportunity to join our growth-oriented team as a Commodity Trader Intern for a 4-month term beginning September 2026.
 
-Duration: 4 months to 12 months
+This internship is designed around three core objectives: supporting the organization's logistics function, engaging in a robust trader training program, and building relationships with traders across the company. It is a training opportunity for individuals interested in exploring a long-term career in lumber trading, offering an inside look into the fast-paced world of commodity markets.
 
-Term: September to December 2026
-
-Location: In office at 600 March Rd. Ottawa, Canada.
+As a Commodity Trader Intern, you'll play a key role in supporting our logistics operations - not just to execute tasks, but to gain a deeper understanding of how supply chains function, how freight markets fluctuate, and how transportation decisions impact trading outcomes. You'll work side-by-side with experienced traders, engage in structured learning, and build industry relationships that offer real insight into the business of commodity trading.
 
 
 
-Your responsibilities
-Support the design, development, and maintenance of internal network and IT systems under the guidance of experienced team members
-Assist with network automation, data processing, or tooling initiatives related to IT and network operations
-Participate in the development and testing of scripts or applications to improve system efficiency and reliability
-Help collect, analyze, and troubleshoot data related to network performance, system logs, or automation workflows
-Collaborate with team members on proof?of?concepts, prototypes, or small development tasks
-Assist with cloud?based data storage and processing activities as part of ongoing projects
-Learn and apply tools such as Databricks, AI/LLM?based libraries, or cloud platforms where applicable
-Document technical findings, configurations, and processes clearly and accurately
-Participate in team meetings, code reviews, and knowledge?sharing sessions
-Follow established development, security, and operational best practices while working on?site
+Who We're Looking for
+
+Working toward or have completed a Degree or Diploma in Business or a related field. We're also open to other educational backgrounds with relevant skills or experience.
+Experience thriving in fast-paced environments, where adaptability, urgency, and attention to detail are key.
+A competitive, entrepreneurial mindset: you're driven, proactive, and energized by the challenge of finding better ways to do things.
+Strong interpersonal and communication skills, with the confidence to collaborate across teams and build working relationships quickly.
+A background in competitive sports or similarly high-performance settings. A plus that shows you're resilient, goal-oriented, and team-minded.
 
 
-Your skills and experience
-Required Skills and Experience:
-Currently enrolled in a bachelor's degree or diploma program in Computer Science, Computer Systems Engineering, or a related field
-Coursework or hands?on experience with Python programming, SQL statements, and PowerShell scripting
-Familiarity with cloud concepts, including data storage and data processing, through coursework, labs, or personal projects
-Ability to learn new technologies quickly and apply them in a practical environment, with strong problem?solving skills and attention to detail
-Good communication skills and the ability to work effectively as part of an on?site team
-Familiarity with version control tools such as Git through academic or project work
+What You'll Do
 
-Nice to have:
+This internship is built around three core objectives: improving efficiency in trucking solutions, engaging in a comprehensive training program, and growing your professional network in the trading industry. As a Commodity Trader Intern at Olympic Industries, you will:
 
-Basic understanding of networking fundamentals, such as TCP/IP, IP addressing, routing, or network protocols
-Exposure to Databricks, data analytics platforms, or big?data tools
-Interest in or introductory experience with LangChain, OpenAI, or other AI/LLM?based libraries
+Support and improve freight efficiency by executing time-sensitive logistics tasks such as tracking shipments, negotiating spot rates, and coordinating with carriers - all while learning how freight markets impact supply chain decision-making.
+Explore how transportation decisions shape trade outcomes by working closely with logistics and Traders to understand transportation lanes, cost dynamics, and timing challenges.
+Research and prospect new freight partners to expand our network and create more cost-effective and responsive trucking solutions.
+Participate in structured training to learn the fundamentals of commodity trading, logistics strategy, and market behavior.
+Build meaningful connections across departments to develop your network and uncover future career opportunities.
+
+What We Offer
+
+Salary: $50,000 per year (pro-rated).
+Midweek Perks: Enjoy Wednesday Breakfasts to power through the week.
+Team Bonding: Join monthly team lunches with our Operations Department, and quarterly team events.
+On-Site Amenities: Access our employee lounge, pool table, ping pong, and more.
+Private Gym: Free, employee-only in-office gym to stay active and energized.
+Culture of Collaboration: We foster an open-door environment that encourages cross-team learning and career growth.
+Location: This is a 100% in-office role based in the vibrant Lower Lonsdale area of North Vancouver, steps from local shops and restaurants. Re-location support may be applied for if successful candidates require a re-location for this role.
+
+
+Apply Now!
+
+For details regarding our interview process, please see the attached document.
+
+For more information on Olympic Industries, please visit our website at www.olympicind.com.
+
+We thank all applicants for their interest! However, only those selected for an interview will be contacted. At Olympic Industries, we embrace diversity and are committed to building a team that represents a variety of backgrounds, cultures, perspectives skills, and experiences. As an equal opportunity employer, we encourage applications from all qualified individuals.
+
+Please note: Olympic Industries ULC uses AI-assisted tools in portions of our interview process. Additional details are outlined in our AI Candidate Disclosure, provided during the recruitment process.
