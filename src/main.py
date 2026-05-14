@@ -2,6 +2,10 @@ import sys
 import os
 import json
 import logging
+import warnings
+
+warnings.filterwarnings("ignore", message=".*there are non-text parts in the response.*")
+
 from utils import load_env, read_file, read_json, write_file
 from parse_job import parse_job_description
 from rank import rank_bullets
