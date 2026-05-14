@@ -59,8 +59,13 @@ def main():
     
     company_name = job_reqs.get('company_name', '').strip()
     if company_name:
-        clean_company_name = "".join(c for c in company_name if c.isalnum() or c in (' ', '_', '-')).replace(' ', '_')
-        file_name = f'resume_{clean_company_name}.tex'
+        clean_company_name = "".join(c for c in company_name if c.isalnum() or c in (' ', '-')).strip()
+        # Ensure it's a short company name by taking the first word if it's long
+        short_company_name = clean_company_name.split()[0] if clean_company_name else ""
+        if short_company_name:
+            file_name = f'resume {short_company_name}.tex'
+        else:
+            file_name = 'resume.tex'
     else:
         file_name = 'resume.tex'
         

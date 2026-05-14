@@ -17,7 +17,7 @@ Job Description:
 
 JSON Format:
 {{
-    "company_name": "Name of the Company (or empty string if not found)",
+    "company_name": "Short, single-word name of the Company (infer from context like location or email if not explicitly stated, or empty string if totally unknown)",
     "skills": ["skill1", "skill2"],
     "technologies": ["tech1", "tech2"],
     "responsibilities": ["resp1", "resp2"]
