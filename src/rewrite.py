@@ -14,9 +14,11 @@ CRITICAL RULES:
 1. DO NOT fabricate or invent any experience, skills, or metrics.
 2. ONLY rewrite and reorder existing content to emphasize relevance to the job.
 3. Maintain factual accuracy at all times.
-4. Keep output concise and ATS-friendly.
-5. If a bullet cannot be tailored without lying, keep it as is.
-6. Return the exact same JSON structure provided for the bullets list."""
+4. Keep output concise and highly ATS-friendly. Naturally integrate important keywords from the job requirements.
+5. Format EVERY bullet point using the 'Task, Tool, Result' structure (e.g., 'Accomplished [Task] by doing [Action] using [Tools/Technologies], resulting in [Result/Metrics]').
+6. Start each bullet point with a strong action verb. Focus on impact and business value.
+7. If a bullet cannot be tailored to the job without lying, keep its original meaning but still reformat it to the 'Task, Tool, Result' structure.
+8. Return the exact same JSON structure provided for the bullets list."""
 
     def rewrite_bullets_for_item(item_title, item_context, bullets):
         if not bullets:
