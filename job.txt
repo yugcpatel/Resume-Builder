@@ -1,49 +1,83 @@
-The Opportunity
+138186 - Technical Operations and Software Platforms Co-op
+Insurance Corporation of British Columbia (ICBC) - Talent Acquisition Services
+APPLY
+Job Posting Status:	Approved
+Internal Status	Not Set
+more_vertActions
+APPLY
+Favourite
+Not Interested
+Print
+Posting Detail
+Overview
+Map
+Job Posting Information
+Term Posted:	2026 Fall
+Position Type:	Co-op
+Targeted Degrees and Disciplines:	
+View Targeted Programs
+Job Title:	Technical Operations and Software Platforms Co-op
+Job Description:	
+IMPORTANT
+You MUST include the Co-op Questionnaire (attached below) with your application submission to ICBC.
 
-Olympic Industries is excited to offer a highly motivated and passionate individual the opportunity to join our growth-oriented team as a Commodity Trader Intern for a 4-month term beginning September 2026.
+Fill out the co-op Questionnaire word document, add it as an "Other Document" to myExperience, and include it with your application.
 
-This internship is designed around three core objectives: supporting the organization's logistics function, engaging in a robust trader training program, and building relationships with traders across the company. It is a training opportunity for individuals interested in exploring a long-term career in lumber trading, offering an inside look into the fast-paced world of commodity markets.
-
-As a Commodity Trader Intern, you'll play a key role in supporting our logistics operations - not just to execute tasks, but to gain a deeper understanding of how supply chains function, how freight markets fluctuate, and how transportation decisions impact trading outcomes. You'll work side-by-side with experienced traders, engage in structured learning, and build industry relationships that offer real insight into the business of commodity trading.
-
-
-
-Who We're Looking for
-
-Working toward or have completed a Degree or Diploma in Business or a related field. We're also open to other educational backgrounds with relevant skills or experience.
-Experience thriving in fast-paced environments, where adaptability, urgency, and attention to detail are key.
-A competitive, entrepreneurial mindset: you're driven, proactive, and energized by the challenge of finding better ways to do things.
-Strong interpersonal and communication skills, with the confidence to collaborate across teams and build working relationships quickly.
-A background in competitive sports or similarly high-performance settings. A plus that shows you're resilient, goal-oriented, and team-minded.
-
-
-What You'll Do
-
-This internship is built around three core objectives: improving efficiency in trucking solutions, engaging in a comprehensive training program, and growing your professional network in the trading industry. As a Commodity Trader Intern at Olympic Industries, you will:
-
-Support and improve freight efficiency by executing time-sensitive logistics tasks such as tracking shipments, negotiating spot rates, and coordinating with carriers - all while learning how freight markets impact supply chain decision-making.
-Explore how transportation decisions shape trade outcomes by working closely with logistics and Traders to understand transportation lanes, cost dynamics, and timing challenges.
-Research and prospect new freight partners to expand our network and create more cost-effective and responsive trucking solutions.
-Participate in structured training to learn the fundamentals of commodity trading, logistics strategy, and market behavior.
-Build meaningful connections across departments to develop your network and uncover future career opportunities.
-
-What We Offer
-
-Salary: $50,000 per year (pro-rated).
-Midweek Perks: Enjoy Wednesday Breakfasts to power through the week.
-Team Bonding: Join monthly team lunches with our Operations Department, and quarterly team events.
-On-Site Amenities: Access our employee lounge, pool table, ping pong, and more.
-Private Gym: Free, employee-only in-office gym to stay active and energized.
-Culture of Collaboration: We foster an open-door environment that encourages cross-team learning and career growth.
-Location: This is a 100% in-office role based in the vibrant Lower Lonsdale area of North Vancouver, steps from local shops and restaurants. Re-location support may be applied for if successful candidates require a re-location for this role.
+Applications with WITHOUT the Co-op Questionnaire, will be disregarded
 
 
-Apply Now!
 
-For details regarding our interview process, please see the attached document.
+About Us
 
-For more information on Olympic Industries, please visit our website at www.olympicind.com.
+A career at ICBC is an opportunity to be part of a talented, diverse and inclusive team that is driven to serve its customers and community. Make the most of your skills and take the opportunity to grow and develop your career. ICBC is an equal opportunity employer, and invites applications from all qualified candidates. You can expect a competitive salary, comprehensive benefits and a challenging work environment. Drive your career with us.
 
-We thank all applicants for their interest! However, only those selected for an interview will be contacted. At Olympic Industries, we embrace diversity and are committed to building a team that represents a variety of backgrounds, cultures, perspectives skills, and experiences. As an equal opportunity employer, we encourage applications from all qualified individuals.
+ICBC is searching for a motivated student who is intrigued by all things technical. Our co-op opportunity will provide practical, hands on experience in one of the largest IT shops within British Columbia. This is your opportunity to gain exposure to complex enterprise level technology and software platforms. Our teams support over 650 applications from COTS ERP systems to home-grown specialty applications.
 
-Please note: Olympic Industries ULC uses AI-assisted tools in portions of our interview process. Additional details are outlined in our AI Candidate Disclosure, provided during the recruitment process.
+
+
+Position highlights
+
+We have an opportunity for a Co-op with technical interests to join one of our Technical Operations or Software Platforms team and help support our clients across the province. This team supports a number of different infrastructure and software platforms.
+
+
+
+You will be in the centre of an operational department assisting in sustaining our platforms in support of business change. This work will help you gain experience in:
+
+Systems administration and technical support
+Incident response and resolution
+Level 2 problem and root cause analysis
+Scripting and automating maintenance tasks
+Consulting with application development teams
+Technical implementation and delivery
+Analysis and automation of operational and project processes
+System monitoring and enhancements
+
+Position requirements
+
+Experience in the following technical skills would be an asset:
+
+Databases (SQL Server, Oracle)
+Data Science (Hadoop, Python, R)
+Scripting technologies (e.g., PowerShell) or programming skills (Java or .Net)
+Directory services (LDAP, AD)
+Windows 7/10, Windows Server 2012
+Linux (RedHat)
+Automation technologies (Ansible, Jenkins, SVN, SCCM)
+Monitoring technologies (Splunk, Nagios, SCOM, Opnet)
+Directory services (AD, LDAP) and Group Policy (GPO)
+Knowledge of Hybrid Cloud Platforms and multi-site operational support (e.g. Microsoft Azure and M365)
+
+
+The following basic skills will be required:
+
+Organized and delivery focused
+Good communication - written and verbal
+Understanding basic business processes and IT processes and functions (e.g., network, server, databases, storage, access management, patching, etc.)
+Great attention to detail
+IT-related education
+Self-motivated
+Able to work with minimal supervision
+Pay: $34.23 per hour + 11.2% in lieu of Stat/Vacation
+
+*8 Months Preferred*
+

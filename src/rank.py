@@ -91,6 +91,12 @@ def rank_bullets(master_resume, job_requirements_text):
             bullets_with_scores = scored_projects[i]
             bullets_with_scores.sort(key=lambda x: x[0], reverse=True)
             ranked_proj['bullets'] = [b for score, b in bullets_with_scores[:2]]
-            ranked_resume['projects'].append(ranked_proj)
+            
+            proj_score = sum(score for score, b in bullets_with_scores[:2]) / 2 if bullets_with_scores else 0
+            ranked_resume['projects'].append((proj_score, ranked_proj))
+            
+        # Keep only top 2 projects
+        ranked_resume['projects'].sort(key=lambda x: x[0], reverse=True)
+        ranked_resume['projects'] = [p for score, p in ranked_resume['projects'][:2]]
 
     return ranked_resume
