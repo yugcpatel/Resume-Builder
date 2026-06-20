@@ -19,7 +19,7 @@
 \input{glyphtounicode}
 
 %---------- COLOR ----------
-\definecolor{mygreen}{RGB}{0,120,0}
+\definecolor{primarycolor}{RGB}{0,51,102}
 
 \pagestyle{fancy}
 \fancyhf{} 
@@ -40,9 +40,9 @@
 
 %---------- SECTION STYLE (FORCED COLOR) ----------
 \titleformat{\section}
-  {\vspace{-4pt}\scshape\raggedright\large\color{mygreen}}
+  {\vspace{-4pt}\scshape\raggedright\large\color{primarycolor}}
   {}{0em}{}
-  [\color{mygreen}\titlerule \vspace{-5pt}]
+  [\color{primarycolor}\titlerule \vspace{-5pt}]
 
 \pdfgentounicode=1
 
@@ -82,7 +82,7 @@
 
 %-----------HEADER-----------
 \begin{center}
-    {\Huge \scshape \textcolor{mygreen}{Yug Chiragkumar Patel}} \\ \vspace{1pt}
+    {\Huge \scshape \textcolor{primarycolor}{Yug Chiragkumar Patel}} \\ \vspace{1pt}
     \small 604-603-7976 $|$ \href{mailto:ycp2@sfu.ca}{\underline{ycp2@sfu.ca}} $|$ 
     \href{https://linkedin.com/in/yug-c-patel}{\underline{linkedin.com/in/yug-c-patel}} $|$
     \href{https://github.com/yugcpatel}{\underline{github.com/yugcpatel}}
@@ -91,7 +91,20 @@
 %-----------EDUCATION-----------
 \section{Education}
 \resumeSubHeadingListStart
-{{EDUCATION}}
+  \resumeSubheading
+    {Simon Fraser University}{Burnaby, BC, Canada}
+    {Bachelor of Science in Computing Science, \textbf{GPA: 3.83}}{Jan 2026 -- Dec 2027 (Expected)}
+    % \resumeItemListStart
+    %   \resumeItem{\textbf{Courses}: CMPT 105W, MACM 101, EVSC 100, IS 105, CMPT 210, CMPT 276, CMPT 295}
+    % \resumeItemListEnd
+
+  \resumeSubheading
+    {Langara College}{Vancouver, BC, Canada}
+    {Associate of Science in Computer Science, \textbf{GPA: 4.09 / 4.33}}{Jan 2023 -- Dec 2025}
+    \resumeItemListStart
+      \resumeItem{\textbf{Honors}: Dean's Honour Roll (Fall 2024)}
+      % \resumeItem{\textbf{Courses}: CPSC 120, CPSC 125, CPSC 225, CPSC 165, CPSC 2600, CPSC 354, CPSC 365, STAT 1181, MATH 151, MATH 152, MATH 240, PHYS 100}
+    \resumeItemListEnd
 \resumeSubHeadingListEnd
 
 %-----------TECHNICAL SKILLS-----------
@@ -115,9 +128,21 @@
 \resumeSubHeadingListEnd
 
 %-----------CERTIFICATIONS-----------
+% \section{Certifications}
+% \resumeSubHeadingListStart
+%   \resumeProjectHeading
+%     {\textbf{CompTIA Security+}}{Jan 2025}
+%     \resumeItemListStart
+%       \resumeItem{Covered threat detection, risk assessment, and vulnerability analysis}
+%       \resumeItem{Applied encryption, authentication, and network security protocols}
+%       \resumeItem{Developed understanding of security compliance, incident response, and system protection strategies}
+%     \resumeItemListEnd
+% \resumeSubHeadingListEnd
 \section{Certifications}
 \resumeSubHeadingListStart
-{{CERTIFICATIONS}}
+\resumeProjectHeading
+  {\textbf{CompTIA Security+} $|$ \emph{Covered threat detection, risk assessment, and vulnerability analysis, Applied encryption}}{Jan 2025}
+
 \resumeSubHeadingListEnd
 
 \end{document}

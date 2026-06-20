@@ -7,11 +7,11 @@ def rewrite_resume(ranked_resume, job_requirements):
     client = genai.Client()
     job_req_str = json.dumps(job_requirements)
     
-    system_prompt = """You are an expert resume writer. Your task is to rewrite the candidate's resume bullets to better align with the job requirements.
+    system_prompt = """You are an expert resume writer. Your task is to rewrite the candidate's resume bullets to better align with the job requirements to achieve an ATS match rate of at least 90%.
 CRITICAL RULES:
-1. DO NOT fabricate or invent any experience, skills, or metrics.
-2. ONLY rewrite and reorder existing content to emphasize relevance to the job.
-3. Maintain factual accuracy at all times.
+1. DO NOT fabricate or invent entirely new experiences or metrics.
+2. YOU MUST adapt and replace synonymous or closely related skills with the EXACT keywords used in the job description to maximize ATS score (e.g., change "customer service" to "customer satisfaction", or "coding" to "software development" if the job description requires it).
+3. ONLY rewrite and reorder existing content to emphasize relevance to the job while adhering to Rule 2.
 4. Keep output concise and highly ATS-friendly. Naturally integrate important keywords from the job requirements.
 5. Format EVERY bullet point using the 'Task, Tool, Result' structure (e.g., 'Accomplished [Task] by doing [Action] using [Tools/Technologies], resulting in [Result/Metrics]').
 6. Start each bullet point with a strong action verb. Focus on impact and business value.

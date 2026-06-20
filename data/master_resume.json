@@ -1,7 +1,7 @@
 {
     "personal_info": {
         "full_name": "Yug Chiragkumar Patel",
-        "email": "ycp2@sfu.ca",
+        "email": "yug256450@gmail.com",
         "phone": "+1 604 603 7976",
         "linkedin": "https://www.linkedin.com/in/yug-c-patel/",
         "github": "https://github.com/yugcpatel"
@@ -59,6 +59,7 @@
             "C++",
             "JavaScript",
             "R",
+            "Prompt Engineering",
             "Bash"
         ],
         "backend": [
@@ -67,7 +68,9 @@
             "REST APIs",
             "Microservices",
             "Authentication",
-            "Error Handling"
+            "Error Handling",
+            "LLMs",
+            "Google Gemini API"
         ],
         "databases": [
             "MongoDB",
@@ -95,10 +98,8 @@
             "R",
             "Statistical Analysis",
             "Data Visualization",
-            "Hypothesis Testing",
             "Regression Modeling",
-            "Probability Distributions",
-            "RStudio"
+            "Probability Distributions"
         ],
         "tools": [
             "Git",
@@ -106,7 +107,8 @@
             "Postman",
             "Docker",
             "VS Code",
-            "RStudio"
+            "RStudio",
+            "LaTeX"
         ]
     },
     "experience": [
@@ -130,15 +132,29 @@
             "start_date": "Aug 2023",
             "end_date": "Present",
             "bullets": [
-                "Provided technical support for automated checkout and POS systems, resolving hardware and software issues and reducing system downtime by approximately 40%",
-                "Collaborated with IT teams, supervisors, and operations staff to improve system reliability and data accuracy, enhancing overall store efficiency",
-                "Maintained operational performance in a fast-paced environment through strong attention to detail and rapid issue resolution",
-                "Monitored system performance and escalated recurring issues, contributing to preventive maintenance and continuous improvement strategies",
-                "Trained and onboarded new staff on system usage and operational procedures, improving team productivity and consistency"
+                "Provided technical support for automated checkout and POS systems, resolving software and hardware issues and reducing system downtime by 40% through rapid diagnostics",
+                "Cross-trained and successfully operated across multiple departments—including Self-Checkout, Customer Service, and PCX Delivery—adapting quickly to diverse operational needs",
+                "Managed high-volume customer flow during peak periods, successfully de-escalating difficult customer situations with patience while maintaining accuracy and professionalism",
+                "Trusted with critical opening and closing responsibilities, encompassing secure cash handling, store procedures, and the independent resolution of daily operational issues",
+                "Trained and onboarded new staff on system usage and procedures, taking initiative to improve front-end workflow and boost overall team productivity",
+                "Collaborated with supervisors and operations staff to monitor system performance, escalate recurring issues, and implement continuous improvement strategies"
             ]
         }
     ],
     "projects": [
+        {
+            "name": "AI Resume Builder",
+            "type": "Python Application",
+            "start_date": "Jun 2026",
+            "end_date": "Present",
+            "link": "https://github.com/yugcpatel/Resume-Builder",
+            "bullets": [
+                "Developed an automated pipeline in Python that parses job descriptions, semantically ranks resume bullets, and generates tailored LaTeX resumes and cover letters",
+                "Integrated Google Gemini API to extract job requirements and dynamically rewrite resume bullets into an ATS-friendly 'Task, Tool, Result' format",
+                "Implemented a recommendation engine using Gemini embeddings and cosine similarity to prioritize the most relevant candidate experiences",
+                "Engineered robust API fallback mechanisms across multiple LLM models and automated PDF compilation using the subprocess module"
+            ]
+        },
         {
             "name": "World Fun Facts",
             "type": "Full-Stack MERN Application",

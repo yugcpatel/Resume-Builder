@@ -22,20 +22,7 @@ def escape_latex(text):
     return escaped
 
 def generate_latex(resume_data, template_content):
-    # Education
-    edu_latex = ""
-    for edu in resume_data.get('education', []):
-        inst = escape_latex(edu.get('institution', ''))
-        loc = escape_latex(edu.get('location', ''))
-        deg = escape_latex(edu.get('degree', ''))
-        major = escape_latex(edu.get('major', ''))
-        start = escape_latex(edu.get('start_date', ''))
-        end = escape_latex(edu.get('end_date', ''))
-        
-        edu_latex += f"\\resumeSubheading\n"
-        edu_latex += f"  {{{inst}}}{{{loc}}}\n"
-        edu_latex += f"  {{{deg} in {major}}}{{{start} -- {end}}}\n"
-
+    # Education (Hardcoded in template)
     # Skills
     skills_data = resume_data.get('technical_skills', {})
     skills_latex = ""
@@ -77,31 +64,12 @@ def generate_latex(resume_data, template_content):
             proj_latex += f"  \\resumeItem{{{escape_latex(bullet)}}}\n"
         proj_latex += "\\resumeItemListEnd\n"
 
-    # Certifications
-    cert_latex = ""
-    for cert in resume_data.get('certifications', []):
-        name = escape_latex(cert.get('name', ''))
-        date = escape_latex(cert.get('date', ''))
-        
-        # Join details to save space
-        details = [escape_latex(d) for d in cert.get('details', [])]
-        details_str = ", ".join(details)
-        # Prevent it from being too long, take the first 3 or truncate
-        if len(details_str) > 88:
-            details_str = details_str[:85] + "..."
-            
-        cert_latex += f"\\resumeProjectHeading\n"
-        if details_str:
-            cert_latex += f"  {{\\textbf{{{name}}} $|$ \\emph{{{details_str}}}}}{{{date}}}\n"
-        else:
-            cert_latex += f"  {{\\textbf{{{name}}}}}{{{date}}}\n"
+    # Certifications (Hardcoded in template)
 
     # Inject
-    latex_out = template_content.replace('{{EDUCATION}}', edu_latex)
-    latex_out = latex_out.replace('{{SKILLS}}', skills_latex)
+    latex_out = template_content.replace('{{SKILLS}}', skills_latex)
     latex_out = latex_out.replace('{{EXPERIENCE}}', exp_latex)
     latex_out = latex_out.replace('{{PROJECTS}}', proj_latex)
-    latex_out = latex_out.replace('{{CERTIFICATIONS}}', cert_latex)
     
     return latex_out
 
