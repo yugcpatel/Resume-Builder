@@ -57,58 +57,152 @@
             "Java",
             "Python",
             "C++",
+            "C",
             "JavaScript",
+            "TypeScript",
+            "HTML/CSS",
             "R",
-            "Prompt Engineering",
-            "Bash"
+            "SQL",
+            "Bash",
+            "Prompt Engineering"
         ],
-        "backend": [
+        "frameworks_libraries": [
+            "React",
             "Node.js",
-            "Express",
+            "Express.js",
+            "Django",
+            "Flask",
+            "Spring Boot",
+            "jQuery",
+            "Bootstrap",
+            "Tailwind CSS",
+            "Next.js"
+        ],
+        "backend_systems": [
             "REST APIs",
+            "GraphQL",
             "Microservices",
-            "Authentication",
-            "Error Handling",
+            "Authentication (OAuth, JWT)",
+            "WebSockets",
+            "Message Queues",
             "LLMs",
-            "Google Gemini API"
+            "Google Gemini API",
+            "OpenAI API"
         ],
         "databases": [
             "MongoDB",
-            "SQL",
             "MySQL",
+            "PostgreSQL",
+            "SQL Server",
+            "SQLite",
+            "Firebase",
+            "Redis",
             "Data Modeling",
-            "Query Optimization"
+            "Query Optimization",
+            "Database Administration"
         ],
         "cloud_devops": [
             "Google Cloud Platform (GCP)",
-            "CI/CD",
-            "Automation",
+            "Amazon Web Services (AWS)",
+            "Microsoft Azure",
+            "Docker",
+            "Kubernetes",
+            "CI/CD (GitHub Actions, Jenkins)",
+            "Terraform",
+            "Infrastructure as Code",
             "Linux",
-            "Git",
-            "Containerization"
+            "Networking (TCP/IP, DNS, HTTP)"
+        ],
+        "data_analysis": [
+            "Python (pandas, NumPy, Matplotlib)",
+            "R (ggplot2, dplyr)",
+            "Jupyter Notebooks",
+            "Statistical Analysis",
+            "Data Visualization",
+            "Regression Modeling",
+            "Machine Learning (scikit-learn)",
+            "Tableau",
+            "Power BI",
+            "Microsoft Excel (Pivot Tables, VLOOKUP)",
+            "ETL Pipelines",
+            "Data Cleaning and Wrangling"
+        ],
+        "cybersecurity": [
+            "CompTIA Security+",
+            "Network Security",
+            "Vulnerability Assessment",
+            "Threat Detection and Analysis",
+            "SIEM (Splunk)",
+            "Wireshark",
+            "Nmap",
+            "Burp Suite",
+            "Kali Linux",
+            "Encryption and Cryptography",
+            "Identity and Access Management (IAM)",
+            "Incident Response",
+            "Risk Assessment",
+            "Security Compliance (NIST, ISO 27001)",
+            "IDS/IPS",
+            "Penetration Testing",
+            "Firewall Configuration"
         ],
         "core_cs": [
             "Data Structures",
             "Algorithms",
             "Object-Oriented Programming",
             "System Design",
-            "Distributed Systems"
-        ],
-        "data_analysis": [
-            "R",
-            "Statistical Analysis",
-            "Data Visualization",
-            "Regression Modeling",
-            "Probability Distributions"
+            "Distributed Systems",
+            "Operating Systems",
+            "Computer Networks",
+            "Software Engineering Principles",
+            "Design Patterns",
+            "Agile/Scrum Methodology"
         ],
         "tools": [
             "Git",
             "GitHub",
+            "GitLab",
             "Postman",
             "Docker",
             "VS Code",
+            "IntelliJ IDEA",
             "RStudio",
-            "LaTeX"
+            "LaTeX",
+            "JIRA",
+            "Confluence",
+            "Slack",
+            "Microsoft Office Suite"
+        ],
+        "office_admin": [
+            "Microsoft Word",
+            "Microsoft Excel",
+            "Microsoft PowerPoint",
+            "Email Communication",
+            "Data Entry",
+            "Records Management",
+            "Document Processing",
+            "Customer Service",
+            "Cash Handling",
+            "POS Systems"
+        ],
+        "soft_skills": [
+            "Customer Service Excellence",
+            "Verbal and Written Communication",
+            "Attention to Detail",
+            "Time Management",
+            "Deadline Management",
+            "Multitasking",
+            "Problem Solving",
+            "Teamwork and Collaboration",
+            "Adaptability",
+            "Conflict Resolution",
+            "Confidentiality",
+            "Working Under Pressure",
+            "Independent Work",
+            "Initiative and Self-Direction",
+            "Organizational Skills",
+            "Cross-Functional Collaboration",
+            "Change Management"
         ]
     },
     "experience": [
@@ -122,7 +216,13 @@
                 "Designed a geospatial database schema using MySQL to manage infrastructure assets and network data, improving data organization and scalability across multiple datasets",
                 "Developed a modular React application with structured architecture and implemented routing across key views, improving navigation and reducing code complexity",
                 "Collaborated with cross-functional teams to standardize data structures, improving system integration and reducing inconsistencies across development modules",
-                "Managed and maintained codebase using Git, enabling efficient collaboration and minimizing merge conflicts in a multi-developer environment"
+                "Managed and maintained codebase using Git, enabling efficient collaboration and minimizing merge conflicts in a multi-developer environment",
+                "Contributed to a technically ambitious, large-scale critical infrastructure mapping application involving multiple parallel development teams coordinating across interconnected sectors",
+                "Verified and processed complex infrastructure data by cross-referencing multiple datasets, ensuring accuracy and consistency of records across the information system",
+                "Maintained and updated system documentation and technical records, supporting clear written communication across a collaborative development environment",
+                "Demonstrated professionalism, reliability, and a positive attitude while adapting to evolving project requirements and coordinating with team members across multiple functional areas",
+                "Engaged with complex systems architecture and remained adaptable as the application evolved through multiple development stages nearing completion",
+                "Applied attention to detail when performing data verification and quality assurance tasks across infrastructure modelling datasets to ensure data integrity"
             ]
         },
         {
@@ -137,7 +237,17 @@
                 "Managed high-volume customer flow during peak periods, successfully de-escalating difficult customer situations with patience while maintaining accuracy and professionalism",
                 "Trusted with critical opening and closing responsibilities, encompassing secure cash handling, store procedures, and the independent resolution of daily operational issues",
                 "Trained and onboarded new staff on system usage and procedures, taking initiative to improve front-end workflow and boost overall team productivity",
-                "Collaborated with supervisors and operations staff to monitor system performance, escalate recurring issues, and implement continuous improvement strategies"
+                "Leveraged excellent organizational skills and the ability to multitask by prioritizing tasks to work well under pressure, utilizing effective communication and verbal communications skills alongside the ability to work independently",
+                "Recognized as one of the most versatile and dependable associates on the team through demonstrated strong reliability, professionalism, and an excellent work ethic over 3+ years of continuous employment",
+                "Remained calm and efficient under pressure during busy rush periods, consistently managing customer flow effectively while maintaining accuracy, attention to detail, and professionalism",
+                "Performed accurate data entry and transaction processing using computerized POS and self-checkout systems, maintaining records with zero balancing discrepancies during cash handling procedures",
+                "Interpreted and applied company policies, procedures, and guidelines to process customer requests, referring complex or non-routine situations to supervisors when appropriate",
+                "Maintained confidentiality of customer and financial records while handling sensitive transaction data and store operational information",
+                "Demonstrated strong time management and deadline management skills by efficiently prioritizing conflicting demands during high-volume peak periods in a fast-paced retail environment",
+                "Took initiative to identify and implement workflow improvements without constant supervision, demonstrating self-direction and problem-solving ability valued by management",
+                "Provided exemplary customer service by responding to general inquiries, resolving issues, and providing information and assistance to a high volume of diverse customers daily",
+                "Performed clerical duties including maintaining various records, processing documentation, and executing routine correspondence related to store operations",
+                "Adapted quickly to learn new computerized systems and operational responsibilities across multiple departments, demonstrating strong growth potential and technical aptitude"
             ]
         }
     ],
@@ -145,14 +255,16 @@
         {
             "name": "AI Resume Builder",
             "type": "Python Application",
-            "start_date": "Jun 2026",
-            "end_date": "Present",
+            "start_date": "Apr 2026",
+            "end_date": "May 2026",
             "link": "https://github.com/yugcpatel/Resume-Builder",
             "bullets": [
                 "Developed an automated pipeline in Python that parses job descriptions, semantically ranks resume bullets, and generates tailored LaTeX resumes and cover letters",
                 "Integrated Google Gemini API to extract job requirements and dynamically rewrite resume bullets into an ATS-friendly 'Task, Tool, Result' format",
                 "Implemented a recommendation engine using Gemini embeddings and cosine similarity to prioritize the most relevant candidate experiences",
-                "Engineered robust API fallback mechanisms across multiple LLM models and automated PDF compilation using the subprocess module"
+                "Engineered robust API fallback mechanisms across multiple LLM models and automated PDF compilation using the subprocess module",
+                "Applied meticulous attention to detail in designing document formatting templates and verifying data entry accuracy across generated outputs",
+                "Automated routine clerical document generation tasks, reducing manual processing effort by approximately 90% while maintaining high-quality written communication standards"
             ]
         },
         {
@@ -165,7 +277,9 @@
                 "Designed and deployed a full-stack MERN application using React, Node.js, Express, and MongoDB to deliver dynamic country-based content",
                 "Built RESTful APIs supporting CRUD operations and scalable data models, improving backend performance and reliability",
                 "Integrated Google Gemini API to automate content generation, reducing manual effort by approximately 80%",
-                "Deployed application using cloud hosting and environment-based configuration, ensuring stable production performance and maintainability"
+                "Deployed application using cloud hosting and environment-based configuration, ensuring stable production performance and maintainability",
+                "Maintained and updated an information system by performing data entry, verification, and quality assurance of content records across a database-driven platform",
+                "Provided a user-facing service interface with intuitive navigation, delivering information and assistance to end users through a responsive web application"
             ]
         },
         {
@@ -176,7 +290,8 @@
             "bullets": [
                 "Solved 80+ algorithmic problems across arrays, graphs, heaps, and dynamic programming",
                 "Optimized solutions using time and space complexity techniques including O(n log n) and O(1)",
-                "Applied data structures and system design patterns to simulate real-world problem scenarios"
+                "Applied data structures and system design patterns to simulate real-world problem scenarios",
+                "Demonstrated strong problem-solving ability and attention to detail by systematically investigating, analyzing, and resolving complex logical challenges"
             ]
         },
         {
@@ -187,7 +302,8 @@
             "bullets": [
                 "Automated cloud infrastructure provisioning using Python scripts to deploy and monitor resources",
                 "Implemented logging, monitoring, and resource management strategies to improve system reliability",
-                "Applied CI/CD workflows and infrastructure-as-code principles in cloud environments"
+                "Applied CI/CD workflows and infrastructure-as-code principles in cloud environments",
+                "Managed system records and maintained documentation for resource configurations, supporting organized and retrievable information management"
             ]
         }
     ],

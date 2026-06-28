@@ -3,8 +3,9 @@
 % Author : Yug Patel
 %------------------------
 
-\documentclass[letterpaper,11pt]{article}
+\documentclass[letterpaper,12pt]{article}
 
+\usepackage{times}
 \usepackage[svgnames]{xcolor} 
 \usepackage{latexsym}
 \usepackage[empty]{fullpage}
@@ -16,6 +17,8 @@
 \usepackage{fancyhdr}
 \usepackage[english]{babel}
 \usepackage{tabularx}
+\usepackage{setspace}
+\setstretch{1.1}
 \input{glyphtounicode}
 
 %---------- COLOR ----------
@@ -27,11 +30,12 @@
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 
-\addtolength{\oddsidemargin}{-0.5in}
-\addtolength{\evensidemargin}{-0.5in}
-\addtolength{\textwidth}{1in}
-\addtolength{\topmargin}{-.5in}
-\addtolength{\textheight}{1.0in}
+% Margins — slightly bigger than before to fill 2 pages
+\addtolength{\oddsidemargin}{-0.3in}
+\addtolength{\evensidemargin}{-0.3in}
+\addtolength{\textwidth}{0.6in}
+\addtolength{\topmargin}{-0.3in}
+\addtolength{\textheight}{0.6in}
 
 \urlstyle{same}
 \raggedbottom
@@ -88,27 +92,26 @@
     \href{https://github.com/yugcpatel}{\underline{github.com/yugcpatel}}
 \end{center}
 
+%-----------PROFESSIONAL SUMMARY-----------
+{{SUMMARY}}
+
 %-----------EDUCATION-----------
 \section{Education}
 \resumeSubHeadingListStart
   \resumeSubheading
     {Simon Fraser University}{Burnaby, BC, Canada}
     {Bachelor of Science in Computing Science, \textbf{GPA: 3.83}}{Jan 2026 -- Dec 2027 (Expected)}
-    % \resumeItemListStart
-    %   \resumeItem{\textbf{Courses}: CMPT 105W, MACM 101, EVSC 100, IS 105, CMPT 210, CMPT 276, CMPT 295}
-    % \resumeItemListEnd
 
   \resumeSubheading
     {Langara College}{Vancouver, BC, Canada}
     {Associate of Science in Computer Science, \textbf{GPA: 4.09 / 4.33}}{Jan 2023 -- Dec 2025}
     \resumeItemListStart
       \resumeItem{\textbf{Honors}: Dean's Honour Roll (Fall 2024)}
-      % \resumeItem{\textbf{Courses}: CPSC 120, CPSC 125, CPSC 225, CPSC 165, CPSC 2600, CPSC 354, CPSC 365, STAT 1181, MATH 151, MATH 152, MATH 240, PHYS 100}
     \resumeItemListEnd
 \resumeSubHeadingListEnd
 
 %-----------TECHNICAL SKILLS-----------
-\section{Technical Skills}
+\section{Skills}
 \begin{itemize}[leftmargin=0.15in, label={}]
 \small{\item{
 {{SKILLS}}
@@ -128,21 +131,9 @@
 \resumeSubHeadingListEnd
 
 %-----------CERTIFICATIONS-----------
-% \section{Certifications}
-% \resumeSubHeadingListStart
-%   \resumeProjectHeading
-%     {\textbf{CompTIA Security+}}{Jan 2025}
-%     \resumeItemListStart
-%       \resumeItem{Covered threat detection, risk assessment, and vulnerability analysis}
-%       \resumeItem{Applied encryption, authentication, and network security protocols}
-%       \resumeItem{Developed understanding of security compliance, incident response, and system protection strategies}
-%     \resumeItemListEnd
-% \resumeSubHeadingListEnd
 \section{Certifications}
 \resumeSubHeadingListStart
-\resumeProjectHeading
-  {\textbf{CompTIA Security+} $|$ \emph{Covered threat detection, risk assessment, and vulnerability analysis, Applied encryption}}{Jan 2025}
-
+{{CERTIFICATIONS}}
 \resumeSubHeadingListEnd
 
 \end{document}

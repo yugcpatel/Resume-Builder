@@ -21,8 +21,22 @@ def escape_latex(text):
     escaped = ''.join(chars.get(c, c) for c in text)
     return escaped
 
-def generate_latex(resume_data, template_content):
-    # Education (Hardcoded in template)
+def generate_summary_latex(summary_text):
+    """Generates the LaTeX for the professional summary section."""
+    if not summary_text or not summary_text.strip():
+        return ""
+    
+    escaped_summary = escape_latex(summary_text)
+    summary_latex = "\\section{Professional Summary}\n"
+    summary_latex += "\\begin{itemize}[leftmargin=0.15in, label={}]\n"
+    summary_latex += f"\\small{{\\item{{{escaped_summary}}}}}\n"
+    summary_latex += "\\end{itemize}\n"
+    return summary_latex
+
+def generate_latex(resume_data, template_content, summary_text="", tailored_certs=None):
+    # Summary
+    summary_latex = generate_summary_latex(summary_text)
+    
     # Skills
     skills_data = resume_data.get('technical_skills', {})
     skills_latex = ""
@@ -64,12 +78,41 @@ def generate_latex(resume_data, template_content):
             proj_latex += f"  \\resumeItem{{{escape_latex(bullet)}}}\n"
         proj_latex += "\\resumeItemListEnd\n"
 
-    # Certifications (Hardcoded in template)
+    # Certifications
+    cert_latex = ""
+    if tailored_certs:
+        for cert in tailored_certs:
+            cert_name = escape_latex(cert.get('name', ''))
+            cert_date = escape_latex(cert.get('date', ''))
+            cert_latex += "\\resumeProjectHeading\n"
+            cert_latex += f"  {{\\textbf{{{cert_name}}}}}{{{cert_date}}}\n"
+            cert_latex += "\\resumeItemListStart\n"
+            bullets = cert.get('bullets', [])
+            if not bullets:
+                # Fallback: use description if bullets not available
+                desc = cert.get('description', '')
+                if desc:
+                    cert_latex += f"  \\resumeItem{{{escape_latex(desc)}}}\n"
+            else:
+                for bullet in bullets[:3]:
+                    cert_latex += f"  \\resumeItem{{{escape_latex(bullet)}}}\n"
+            cert_latex += "\\resumeItemListEnd\n"
+    else:
+        # Fallback to default
+        cert_latex += "\\resumeProjectHeading\n"
+        cert_latex += "  {\\textbf{CompTIA Security+}}{Jan 2025}\n"
+        cert_latex += "\\resumeItemListStart\n"
+        cert_latex += "  \\resumeItem{Covered threat detection, risk assessment, and vulnerability analysis}\n"
+        cert_latex += "  \\resumeItem{Applied encryption, authentication, and network security protocols}\n"
+        cert_latex += "  \\resumeItem{Developed understanding of security compliance, incident response, and system protection}\n"
+        cert_latex += "\\resumeItemListEnd\n"
 
-    # Inject
-    latex_out = template_content.replace('{{SKILLS}}', skills_latex)
+    # Inject all placeholders
+    latex_out = template_content.replace('{{SUMMARY}}', summary_latex)
+    latex_out = latex_out.replace('{{SKILLS}}', skills_latex)
     latex_out = latex_out.replace('{{EXPERIENCE}}', exp_latex)
     latex_out = latex_out.replace('{{PROJECTS}}', proj_latex)
+    latex_out = latex_out.replace('{{CERTIFICATIONS}}', cert_latex)
     
     return latex_out
 
