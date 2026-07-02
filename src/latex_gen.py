@@ -41,10 +41,12 @@ def generate_latex(resume_data, template_content, summary_text="", tailored_cert
     skills_data = resume_data.get('technical_skills', {})
     skills_latex = ""
     for category, skills_list in skills_data.items():
+        cat_name = escape_latex(category.replace('_', ' ').title())
         if isinstance(skills_list, list):
-            cat_name = escape_latex(category.replace('_', ' ').title())
             skills_str = escape_latex(", ".join(skills_list))
-            skills_latex += f"\\textbf{{{cat_name}}}{{: {skills_str}}} \\\\\n"
+        else:
+            skills_str = escape_latex(str(skills_list))
+        skills_latex += f"\\textbf{{{cat_name}}}{{: {skills_str}}} \\\\\n"
 
     # Experience
     exp_latex = ""

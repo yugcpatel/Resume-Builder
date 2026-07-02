@@ -34,8 +34,8 @@ def generate_content_with_fallback(client, prompt, temperature=0.1):
     from google.genai import types
     
     models = [
-        # 'gemini-3.5-flash',
-        # 'gemini-3-flash-preview',
+        'gemini-3.5-flash',
+        'gemini-3-flash-preview',
         'gemini-2.5-flash',
         'gemini-3.1-flash-lite',
         'gemini-2.5-flash-lite'
@@ -49,7 +49,8 @@ def generate_content_with_fallback(client, prompt, temperature=0.1):
                 model=model_name,
                 contents=prompt,
                 config=types.GenerateContentConfig(
-                    temperature=temperature
+                    temperature=temperature,
+                    thinking_config=types.ThinkingConfig(thinking_budget=1024) if "gemini-3" in model_name else None
                 )
             )
             return response

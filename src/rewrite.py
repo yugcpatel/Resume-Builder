@@ -177,14 +177,18 @@ def tailor_skills(master_skills, job_requirements):
 CANDIDATE'S TARGET DOMAINS: IT, Software Engineering, Data Analysis, and Cybersecurity internships.
 
 RULES:
-1. Select 4-5 skill categories that are MOST relevant to this "{job_type}" job
+1. Select EXACTLY 5 skill categories that are MOST relevant to this "{job_type}" job.
 2. For technical/software roles, use categories like "Languages", "Frameworks & Libraries", "Databases", "Cloud & DevOps", "Cybersecurity", "Data Analysis", "Tools"
 3. For admin roles, use categories like "Office & Computer Skills", "Communication & Interpersonal", "Technical Skills", "Administrative Skills"
-4. INJECT keywords from the job description into the skills lists — every technology, tool, or skill mentioned in the job MUST appear
-5. Remove skills that are clearly irrelevant to this specific job
-6. Each category should have 5-10 skills
-7. Prioritize EXACT keywords from the job posting
-8. For software/IT internships, always include the candidate's programming languages and frameworks prominently
+4. INJECT keywords from the job description into the skills lists — every technology, tool, or skill mentioned in the job MUST appear.
+5. Remove skills that are clearly irrelevant to this specific job.
+6. CRITICAL FORMATTING REQUIREMENT FOR RESUME LENGTH (EXACTLY 2 PAGES):
+   - You MUST ensure the character counts for the output strings are strictly controlled so they fill the lines perfectly without dangling words.
+   - The first 3 categories MUST have a combined string length (Category Name + ": " + comma-separated skills) of exactly 290-310 characters. This forces them to perfectly fill 3 lines in the PDF.
+   - The remaining 2 categories MUST have a combined string length (Category Name + ": " + comma-separated skills) of exactly 200-210 characters. This forces them to perfectly fill 2 lines in the PDF.
+   - Carefully add or remove skills to hit these exact character limits.
+7. Prioritize EXACT keywords from the job posting.
+8. For software/IT internships, always include the candidate's programming languages and frameworks prominently.
 
 Candidate's Full Skills:
 {skills_str}
@@ -206,6 +210,7 @@ Respond ONLY with valid JSON. No markdown."""
         elif content.startswith('```'):
             content = content[3:-3]
         tailored = json.loads(content)
+        print("DEBUG TAILORED SKILLS:", json.dumps(tailored, indent=2))
         return tailored
     except Exception as e:
         logging.error(f"Failed to tailor skills: {e}")
