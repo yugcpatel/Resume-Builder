@@ -70,13 +70,20 @@
             "React",
             "Node.js",
             "Express.js",
+            "Next.js",
+            "Redux Toolkit",
+            "NestJS",
+            "Vite",
+            "Material-UI (MUI)",
+            "Jest",
+            "React Testing Library",
+            "Cypress",
             "Django",
             "Flask",
             "Spring Boot",
             "jQuery",
             "Bootstrap",
-            "Tailwind CSS",
-            "Next.js"
+            "Tailwind CSS"
         ],
         "backend_systems": [
             "REST APIs",

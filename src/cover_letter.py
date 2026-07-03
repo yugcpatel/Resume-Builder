@@ -1,3 +1,8 @@
+"""
+Cover Letter Generation Module.
+Leverages Google Gemini LLM to synthesize candidate resume qualifications and job description requirements
+into a structured, personalized cover letter formatted for LaTeX rendering.
+"""
 import json
 import logging
 from google import genai
@@ -6,7 +11,15 @@ from datetime import datetime
 
 def generate_cover_letter_data(resume_data, job_requirements):
     """
-    Generates tailored cover letter data based on the resume and job description.
+    Generates tailored cover letter data based on the candidate's resume and target job description.
+    
+    Args:
+        resume_data (dict): Candidate's full resume dictionary.
+        job_requirements (dict): Extracted ATS requirements dictionary from parse_job_description.
+        
+    Returns:
+        dict | None: Structured cover letter dictionary matching LaTeX template placeholders,
+                     or None if generation or JSON parsing fails.
     """
     client = genai.Client()
     job_req_str = json.dumps(job_requirements)
@@ -40,8 +53,10 @@ Respond ONLY with valid JSON. Do not include markdown formatting or any other te
     from utils import generate_content_with_fallback
     try:
         logging.info("Generating cover letter content via Gemini API...")
+        # Use temperature 0.3 for a balance of creativity and professional tone
         response = generate_content_with_fallback(client, prompt, temperature=0.3)
         content = response.text.strip()
+        # Strip markdown code block fences if returned by the LLM
         if content.startswith('```json'):
             content = content[7:-3]
         elif content.startswith('```'):

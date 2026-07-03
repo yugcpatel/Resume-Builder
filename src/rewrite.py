@@ -1,9 +1,25 @@
+"""
+Resume Rewriting and ATS Optimization Module.
+Orchestrates LLM prompts to rewrite bullet points, synthesize tailored summaries,
+and restructure skills and certification sections with strict character constraints and zero keyword repetition.
+"""
 import logging
 import json
 from google import genai
 from google.genai import types
 
 def rewrite_resume(ranked_resume, job_requirements):
+    """
+    Rewrites candidate experience and project bullet points to maximize ATS keyword alignment
+    while strictly enforcing vocabulary diversity across sections (no repeated wording).
+    
+    Args:
+        ranked_resume (dict): Filtered resume dictionary from semantic ranking.
+        job_requirements (dict): Extracted ATS requirements dictionary from parse_job_description.
+        
+    Returns:
+        dict: Updated resume dictionary with rewritten, ATS-optimized bullet points.
+    """
     client = genai.Client()
     job_req_str = json.dumps(job_requirements)
     
@@ -37,7 +53,9 @@ MANDATORY RULES — FOLLOW ALL OF THEM:
 
 7. **DO NOT REMOVE REAL ACCOMPLISHMENTS** — enhance them with job-relevant language. If a bullet mentions a real metric (40%, 80+, 90%), keep it.
 
-8. **Return the EXACT same JSON structure provided**, replacing only the strings inside the 'bullets' arrays."""
+8. **Return the EXACT same JSON structure provided**, replacing only the strings inside the 'bullets' arrays.
+
+9. **ZERO REPETITION / VOCABULARY DIVERSITY ACROSS EXPERIENCE AND PROJECTS**: DO NOT repeat the same action verbs, nouns, ATS keywords, or phrasing across multiple bullet points. Once a keyword, tool, or phrase has been used in one bullet point, DO NOT repeat it in another bullet point or section! Use diverse vocabulary and distinct angles for every single bullet point so each item reads uniquely without repetitive wording."""
 
     # Extract just the parts that need rewriting to minimize output tokens
     payload_to_rewrite = {}
@@ -68,10 +86,21 @@ MANDATORY RULES — FOLLOW ALL OF THEM:
     
     rewritten_resume = dict(ranked_resume)
     
-    def rewrite_section(section_name, items):
+    def rewrite_section(section_name, items, previous_context=""):
         if not items:
             return items
             
+        anti_rep_prompt = ""
+        if previous_context:
+            anti_rep_prompt = f"""
+CRITICAL ANTI-REPETITION INSTRUCTION FOR {section_name.upper()}:
+The following bullet points and phrasing were ALREADY generated in the Experience section:
+{previous_context}
+
+YOU MUST NOT REPEAT OR RECYCLE ANY OF THE SAME KEYWORDS, PHRASES, ACTION VERBS, OR SENTENCE STRUCTURES USED ABOVE! 
+For {section_name}, you MUST use completely different vocabulary, different action verbs, and different ATS keywords from the job requirements that were not already covered in Experience. Ensure 100% unique phrasing across the entire resume.
+"""
+
         prompt = f"""
 {system_prompt}
 
@@ -80,8 +109,8 @@ Job Requirements (USE THESE KEYWORDS):
 
 Items to Rewrite ({section_name}):
 {json.dumps(items, indent=2)}
-
-CRITICAL REMINDER: Every keyword from 'ats_critical_keywords' and 'exact_keyword_phrases' MUST appear in your output. Count them. If any are missing, add them.
+{anti_rep_prompt}
+CRITICAL REMINDER: Weave in relevant ATS keywords naturally across the resume, but STRICTLY FORBID any repetition of phrasing, action verbs, or keyword strings between bullet points or between Experience and Projects. Every single bullet point must be 100% unique in wording and structure. YOU MUST USE ALL THE KEY WORDS DO NOT COMPROMISE ON KEYWORDS FOR ANTI REPETITION .
 
 Respond ONLY with the rewritten JSON array containing the items exactly as structured above. Do not include markdown blocks like ```json.
 """
@@ -102,15 +131,18 @@ Respond ONLY with the rewritten JSON array containing the items exactly as struc
             return items
 
     # Rewrite Experience
+    already_used_text = ""
     if 'experience' in payload_to_rewrite and payload_to_rewrite['experience']:
         rewritten_exp = rewrite_section('experience', payload_to_rewrite['experience'])
         for i, exp in enumerate(rewritten_exp):
             if isinstance(exp, dict) and i < len(rewritten_resume.get('experience', [])):
-                rewritten_resume['experience'][i]['bullets'] = exp.get('bullets', [])
+                bullets = exp.get('bullets', [])
+                rewritten_resume['experience'][i]['bullets'] = bullets
+                already_used_text += f"\n- {exp.get('title', '')} at {exp.get('company', '')}: " + " | ".join(bullets)
 
     # Rewrite Projects
     if 'projects' in payload_to_rewrite and payload_to_rewrite['projects']:
-        rewritten_proj = rewrite_section('projects', payload_to_rewrite['projects'])
+        rewritten_proj = rewrite_section('projects', payload_to_rewrite['projects'], previous_context=already_used_text)
         for i, proj in enumerate(rewritten_proj):
             if isinstance(proj, dict) and i < len(rewritten_resume.get('projects', [])):
                 rewritten_resume['projects'][i]['bullets'] = proj.get('bullets', [])
@@ -119,7 +151,17 @@ Respond ONLY with the rewritten JSON array containing the items exactly as struc
 
 
 def generate_professional_summary(resume_data, job_requirements):
-    """Generates a tailored professional summary that mirrors the job description's key requirements."""
+    """
+    Generates a powerful 2-3 sentence professional summary tailored to the target job title
+    and ATS critical keywords, written in the third person without using candidate names.
+    
+    Args:
+        resume_data (dict): Candidate master resume dictionary.
+        job_requirements (dict): Extracted ATS requirements dictionary.
+        
+    Returns:
+        str: Clean 2-3 sentence summary string ready for LaTeX injection.
+    """
     client = genai.Client()
     job_req_str = json.dumps(job_requirements)
     
@@ -165,7 +207,17 @@ Return ONLY the summary text as a plain string. No JSON. No quotes. No markdown.
 
 
 def tailor_skills(master_skills, job_requirements):
-    """Dynamically selects and reorganizes skills to match the job description."""
+    """
+    Dynamically selects and formats skills into exactly 5 categories, strictly enforcing character lengths
+    so categories 1-3 render to 3 lines and categories 4-5 render to 2 lines in LaTeX.
+    
+    Args:
+        master_skills (dict): Master skills dictionary grouped by general category.
+        job_requirements (dict): Extracted ATS requirements dictionary.
+        
+    Returns:
+        dict: Tailored dictionary containing exactly 5 categories ordered by importance.
+    """
     client = genai.Client()
     job_req_str = json.dumps(job_requirements)
     skills_str = json.dumps(master_skills)
@@ -177,18 +229,19 @@ def tailor_skills(master_skills, job_requirements):
 CANDIDATE'S TARGET DOMAINS: IT, Software Engineering, Data Analysis, and Cybersecurity internships.
 
 RULES:
-1. Select EXACTLY 5 skill categories that are MOST relevant to this "{job_type}" job.
-2. For technical/software roles, use categories like "Languages", "Frameworks & Libraries", "Databases", "Cloud & DevOps", "Cybersecurity", "Data Analysis", "Tools"
-3. For admin roles, use categories like "Office & Computer Skills", "Communication & Interpersonal", "Technical Skills", "Administrative Skills"
-4. INJECT keywords from the job description into the skills lists — every technology, tool, or skill mentioned in the job MUST appear.
+1. Select EXACTLY 5 skill categories that are MOST relevant to this "{job_type}" job. You MUST output exactly 5 categories—no more, no less! Order them by importance from most important (1st) to least important (5th).
+2. For technical/software roles, use comprehensive category names like "Programming Languages & Core CS", "Cloud, DevOps & Architecture", "Embedded Systems & Low-Level Programming", "Databases & Data Management", "Frameworks, AI & Development Tools".
+3. For admin/business roles, use categories like "Office & Computer Skills", "Data Analytics & Reporting", "Communication & Interpersonal", "Digital Transformation & AI", "Project & Stakeholder Management".
+4. INJECT keywords from the job description into the skills lists — EVERY single technology, tool, methodology, or skill mentioned in the job MUST appear verbatim! Do not compromise on ATS keyword coverage!
 5. Remove skills that are clearly irrelevant to this specific job.
-6. CRITICAL FORMATTING REQUIREMENT FOR RESUME LENGTH (EXACTLY 2 PAGES):
-   - You MUST ensure the character counts for the output strings are strictly controlled so they fill the lines perfectly without dangling words.
-   - The first 3 categories MUST have a combined string length (Category Name + ": " + comma-separated skills) of exactly 290-310 characters. This forces them to perfectly fill 3 lines in the PDF.
-   - The remaining 2 categories MUST have a combined string length (Category Name + ": " + comma-separated skills) of exactly 200-210 characters. This forces them to perfectly fill 2 lines in the PDF.
-   - Carefully add or remove skills to hit these exact character limits.
+6. CRITICAL FORMATTING REQUIREMENT FOR STRICT 2-PAGE LAYOUT (3 LINES FOR CATEGORIES 1-3, 2 LINES FOR CATEGORIES 4-5):
+   - You MUST format the 5 categories with precise character lengths so they render to exact line counts in LaTeX:
+   - Categories 1, 2, and 3 MUST each fill EXACTLY 3 lines in LaTeX! In our small font, this requires the string (Category Name + ": " + comma-separated skills) to have a total character length strictly between 210 and 260 characters (around 12 to 16 distinct skills/technologies per category).
+   - Categories 4 and 5 MUST each fill EXACTLY 2 lines in LaTeX! This requires the string (Category Name + ": " + comma-separated skills) to have a total character length strictly between 135 and 170 characters (around 7 to 10 distinct skills/technologies per category).
+   - Do not generate short 1-line categories or overly long 4-line categories! Strictly adhere to 3 lines for the first 3 categories, and 2 lines for the last 2 categories.
 7. Prioritize EXACT keywords from the job posting.
-8. For software/IT internships, always include the candidate's programming languages and frameworks prominently.
+8. For software/IT internships, always include the candidate's programming languages, frameworks, cloud tools, databases, and core CS fundamentals prominently.
+9. Keep individual skill entries clean and readable (e.g., "Amazon Web Services (AWS)", "Data Structure Implementation", "CI/CD Pipelines (GitHub Actions, Jenkins)"). Group related concepts when helpful to maximize keyword density without cluttering.
 
 Candidate's Full Skills:
 {skills_str}
@@ -196,7 +249,7 @@ Candidate's Full Skills:
 Job Requirements:
 {job_req_str}
 
-Return a JSON object where keys are category names and values are arrays of skill strings.
+Return a JSON object where keys are category names and values are arrays of skill strings (e.g., {{"Programming": ["Python", "Java", "SQL"]}}). Do not include the category name inside the array.
 Respond ONLY with valid JSON. No markdown."""
 
     from utils import generate_content_with_fallback
@@ -210,7 +263,8 @@ Respond ONLY with valid JSON. No markdown."""
         elif content.startswith('```'):
             content = content[3:-3]
         tailored = json.loads(content)
-        print("DEBUG TAILORED SKILLS:", json.dumps(tailored, indent=2))
+        if isinstance(tailored, dict) and len(tailored) > 5:
+            tailored = dict(list(tailored.items())[:5])
         return tailored
     except Exception as e:
         logging.error(f"Failed to tailor skills: {e}")
@@ -218,7 +272,16 @@ Respond ONLY with valid JSON. No markdown."""
 
 
 def tailor_certifications(certifications, job_requirements):
-    """Rewrites certification bullet points to align with the job requirements."""
+    """
+    Rewrites certification details into exactly 3 concise, job-relevant bullet points per certification.
+    
+    Args:
+        certifications (list[dict]): List of candidate certification dictionaries.
+        job_requirements (dict): Extracted ATS requirements dictionary.
+        
+    Returns:
+        list[dict]: List of tailored certification dictionaries with formatted bullet points.
+    """
     client = genai.Client()
     job_req_str = json.dumps(job_requirements)
     certs_str = json.dumps(certifications)

@@ -1,9 +1,15 @@
+"""
+Main Pipeline Orchestrator for AI Resume Builder.
+Coordinates job description parsing, semantic bullet ranking, aggressive ATS rewriting,
+dynamic skills tailoring, professional summary synthesis, and LaTeX compilation.
+"""
 import sys
 import os
 import json
 import logging
 import warnings
 
+# Suppress SDK warnings regarding non-text response parts (like thinking_signature)
 warnings.filterwarnings("ignore", message=".*there are non-text parts in the response.*")
 
 from utils import load_env, read_file, read_json, write_file
@@ -12,9 +18,14 @@ from rank import rank_bullets
 from rewrite import rewrite_resume, generate_professional_summary, tailor_skills, tailor_certifications
 from latex_gen import generate_latex, compile_latex
 
+# Configure application-level logging
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 
 def main():
+    """
+    Main entry point for executing the end-to-end resume tailoring workflow.
+    Expects path to job description file as command-line argument.
+    """
     if len(sys.argv) < 2:
         print("Usage: python main.py <job.txt>")
         sys.exit(1)

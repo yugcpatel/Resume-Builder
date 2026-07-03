@@ -1,44 +1,38 @@
-POSITION SUMMARY
+Software Development Student (Acoustics)
+Job Description:	
+QNX (a division of BlackBerry) is a world leader in the embedded software that drives many of the world's most interesting products. From space cameras to nuclear reactors to autonomous vehicles and sophisticated medical devices, QNX provides the foundation operating system that runs these systems.
 
-SFU's WearTech Labs is seeking a motivated Research Support Intern for a 4 to 8 month term. In this role you will support research and development for products related to physiology, performance, and wearable technologies. As part of our multidisciplinary team, you may contribute to research related tasks, including but not limited to, project conceptualization, experimental design, data collection and analysis, software and hardware prototyping, and report writing for both academic and industry-facing initiatives. In addition to this, you may contribute to facility management tasks such as equipment maintenance, and supplies management.
+The QNX Acoustics Team is where world-class engineering meets real-world impact. If you're passionate about audio technology, signal processing, and real-time embedded systems, this is a place where your work directly shapes the sound experience in millions of vehicles and devices worldwide. You'll collaborate with experts across acoustics, machine learning, and system design to help build high-performance solutions trusted by global OEMs. It's a team that values curiosity, technical depth, and hands-on innovation, giving you the freedom to push boundaries while working on products that truly matter.
 
+Location: Burnaby
 
+Salary: Dependent on number of academic and coop terms completed
 
-DUTIES AND RESPONSIBILITIES
+Duration: 8 months
 
-Research Development and Execution:
+What you will do:
 
-Assist in the planning and execution of studies related to physiology, performance, and wearable technologies.
-Collect and manage data using laboratory systems (e.g., 3D motion capture, force plates, metabolic carts, etc.).
-Assist with the development and refinement of experimental protocols.
-Conduct data processing, statistical analysis, and interpretation.
-Assist with software development for data acquisition, processing, or visualization pipelines.
-Contribute to prototyping and fabrication, including 3D printing and basic mechanical assembly.
-Generate reports and documentation to summarize existing literature, outline project progress, and communicate results.
-Equipment Maintenance
+Write code in C, C++, C# or Python to modify or exercise QNX Acoustics products for embedded automotive applications
+Debug and analyze issues in the design, implementation and integration of software components
+Write scripts to perform automated tests
 
-Perform equipment calibrations and maintenance following specified protocols.
-Assist with troubleshooting and resolving system malfunctions.
-Contribute to the creation and updating of equipment manuals and procedural guides.
-Support supplies management.
+You will:
 
+Currently be pursuing post-secondary education in a related field
+Have familiarity with Linux or other UNIX-like operating systems
+Have experience with Windows based GUIs such as Microsoft Visual Studio or similar IDE
+Programming experience in one or more of the following: C, C++, C#, Python
+Excellent communication and interpersonal skills
+Eagerness to learn and solve problems
+Embedded software development, real-time audio programming and signal processing experience are a bonus
+Why join QNX?
 
-QUALIFICATIONS
+Mentorship & Learning: Access to professional development courses, mentorship programs, and our on-demand learning platform
 
-Required
+Wellness Support: Access to events that support physical, mental and financial wellness. We host wellness sessions, fitness courses, discounts to local gyms, recreational leagues and offer a 24/7 Employee Assistant Program (EAP)
 
-Completed courses in biomechanics, physiology, engineering, or related fields.
-Interest in interdisciplinary research, particularly in performance, physiology, and wearable technologies.
-Demonstrated ability to use AI tools effectively and critically.
-Demonstrated excellent attention to detail.
-Demonstrated excellent communication skills, both oral and written.
-A GPA of 80% or greater.
-Preferred
+Collaborative Culture: Highly collaborative teams and a supportive workplace environment, with organization-wide events and a student social committee
 
-Familiarity with physiological and biomechanical metrics and data acquisition systems.
-Working knowledge of Python, Matlab, or similar tools for data processing and analysis.
-Experience writing technical summaries, academic reports, or research documentation.
-Experience with CAD software.
-Experience with basic robotics/electronics.
-Demonstrated ability to self-learn.
-A GPA of 90% or greater.
+Employee Perks: Enjoy snacks, beverages, and discounts at local stores, restaurants, and gyms
+
+At QNX, it all starts with you!

@@ -23,3 +23,7 @@ output/
 *.gz
 *.toc
 *.tex
+
+
+# job description files
+./job.txt 

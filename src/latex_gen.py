@@ -1,8 +1,22 @@
+"""
+LaTeX Generation and Compilation Module.
+Handles escaping special LaTeX characters, formatting resume and cover letter sections
+into custom LaTeX templates, and executing pdflatex compiler to generate PDFs.
+"""
 import os
 import subprocess
 import logging
 
 def escape_latex(text):
+    """
+    Escapes special LaTeX reserved characters in raw text strings to prevent compilation syntax errors.
+    
+    Args:
+        text (str | any): Text string to escape. If non-string, converted via str().
+        
+    Returns:
+        str: LaTeX-safe string with reserved symbols escaped.
+    """
     if not isinstance(text, str):
         return str(text)
     
@@ -22,7 +36,15 @@ def escape_latex(text):
     return escaped
 
 def generate_summary_latex(summary_text):
-    """Generates the LaTeX for the professional summary section."""
+    """
+    Generates the LaTeX itemize block for the professional summary section.
+    
+    Args:
+        summary_text (str): 2-3 sentence tailored summary string.
+        
+    Returns:
+        str: Formatted LaTeX code for the summary section, or empty string if summary_text is blank.
+    """
     if not summary_text or not summary_text.strip():
         return ""
     
@@ -34,19 +56,37 @@ def generate_summary_latex(summary_text):
     return summary_latex
 
 def generate_latex(resume_data, template_content, summary_text="", tailored_certs=None):
-    # Summary
+    """
+    Injects candidate resume data, tailored summary, skills, experience, projects,
+    and certifications into placeholders within the LaTeX resume template.
+    
+    Args:
+        resume_data (dict): Master or rewritten resume dictionary.
+        template_content (str): Raw string content of the LaTeX resume template.
+        summary_text (str, optional): Tailored professional summary string.
+        tailored_certs (list[dict], optional): Tailored certification bullet points.
+        
+    Returns:
+        str: Fully rendered LaTeX resume code ready for compilation.
+    """
+    # Summary Section
     summary_latex = generate_summary_latex(summary_text)
     
-    # Skills
+    # Skills Section (handles both string and list inputs from AI output)
     skills_data = resume_data.get('technical_skills', {})
     skills_latex = ""
     for category, skills_list in skills_data.items():
         cat_name = escape_latex(category.replace('_', ' ').title())
         if isinstance(skills_list, list):
-            skills_str = escape_latex(", ".join(skills_list))
+            skills_str = escape_latex(", ".join([str(s) for s in skills_list]))
+        elif isinstance(skills_list, str):
+            val = skills_list.strip()
+            if ':' in val and val.split(':', 1)[0].strip().lower() == category.lower():
+                val = val.split(':', 1)[1].strip()
+            skills_str = escape_latex(val)
         else:
-            skills_str = escape_latex(str(skills_list))
-        skills_latex += f"\\textbf{{{cat_name}}}{{: {skills_str}}} \\\\\n"
+            continue
+        skills_latex += f"\\textbf{{{cat_name}}}{{: {skills_str}}} \\vspace{{2pt}} \\\\\n"
 
     # Experience
     exp_latex = ""
@@ -119,6 +159,16 @@ def generate_latex(resume_data, template_content, summary_text="", tailored_cert
     return latex_out
 
 def generate_cover_letter_latex(cl_data, template_content):
+    """
+    Injects structured cover letter data into placeholders within the LaTeX cover letter template.
+    
+    Args:
+        cl_data (dict): Structured cover letter dictionary from generate_cover_letter_data.
+        template_content (str): Raw string content of the LaTeX cover letter template.
+        
+    Returns:
+        str: Fully rendered LaTeX cover letter code ready for compilation.
+    """
     if not cl_data:
         return template_content
         
@@ -130,6 +180,13 @@ def generate_cover_letter_latex(cl_data, template_content):
     return latex_out
 
 def compile_latex(tex_path, output_dir):
+    """
+    Compiles a .tex file into a PDF using system pdflatex command (supports MiKTeX on Windows).
+    
+    Args:
+        tex_path (str): Path to the target .tex file.
+        output_dir (str): Directory where output PDF and auxiliary logs should be saved.
+    """
     import shutil
     try:
         pdflatex_cmd = 'pdflatex'

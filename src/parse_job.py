@@ -1,10 +1,26 @@
+"""
+Job Description Parsing Module.
+Analyzes raw job postings using Gemini LLM to extract structured ATS requirements,
+keywords, soft skills, and implied qualifications.
+"""
 import json
 import logging
 from google import genai
 from google.genai import types
 
 def parse_job_description(job_text):
-    """Parses a raw job description into comprehensive structured requirements for ATS optimization."""
+    """
+    Parses a raw job description into comprehensive structured requirements for ATS optimization.
+    
+    Args:
+        job_text (str): The full raw text of the job advertisement.
+        
+    Returns:
+        dict: A structured dictionary containing company name, job title, extracted skills,
+              technologies, responsibilities, education/experience requirements, and critical ATS keywords.
+              Returns an empty dictionary {} if parsing fails.
+    """
+    # Initialize GenAI SDK Client using environment variables
     client = genai.Client()
     
     prompt = f"""
@@ -37,9 +53,10 @@ Respond ONLY with valid JSON. No markdown formatting.
 """
     from utils import generate_content_with_fallback
     try:
+        # Use temperature 0.0 for strict, repeatable analytical extraction
         response = generate_content_with_fallback(client, prompt, temperature=0.0)
         content = response.text.strip()
-        # Clean up markdown if present
+        # Strip markdown code block fences if returned by the LLM
         if content.startswith('```json'):
             content = content[7:-3]
         elif content.startswith('```'):
