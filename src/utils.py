@@ -103,7 +103,7 @@ def generate_content_with_fallback(client, prompt, temperature=0.1):
     last_error = None
     for model_name in models:
         try:
-            logging.info(f"Attempting API call with preferred model: {model_name}")
+            logging.info(f"   -> Calling AI Agent ({model_name})...")
             response = client.models.generate_content(
                 model=model_name,
                 contents=prompt,
@@ -119,7 +119,7 @@ def generate_content_with_fallback(client, prompt, temperature=0.1):
             last_error = e
             # Catch rate limit (429), quota exhaustion, model not found (404/400), or API availability errors
             if any(err in error_message for err in ['429', 'quota', 'exhausted', 'not found', '404', '400', '503']):
-                logging.warning(f"Model {model_name} unavailable (limit/not found). Trying next in preference list...")
+                logging.info(f"   -> Model {model_name} busy/limit reached. Trying next AI model...")
                 continue
             else:
                 logging.error(f"Unexpected error with {model_name}: {e}. Trying next model anyway...")

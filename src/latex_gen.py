@@ -208,7 +208,7 @@ def compile_latex(tex_path, output_dir):
         if result.returncode != 0:
             logging.error(f"pdflatex failed:\n{result.stderr}\n{result.stdout}")
         else:
-            logging.info("PDF compiled successfully.")
+            logging.info("   -> PDF compiled successfully.")
     except FileNotFoundError:
         logging.error("pdflatex not found. Please ensure LaTeX is installed and in your PATH.")
     except Exception as e:

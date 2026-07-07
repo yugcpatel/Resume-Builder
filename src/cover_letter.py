@@ -52,7 +52,7 @@ Respond ONLY with valid JSON. Do not include markdown formatting or any other te
 """
     from utils import generate_content_with_fallback
     try:
-        logging.info("Generating cover letter content via Gemini API...")
+        logging.info("   -> Generating cover letter content via Gemini API...")
         # Use temperature 0.3 for a balance of creativity and professional tone
         response = generate_content_with_fallback(client, prompt, temperature=0.3)
         content = response.text.strip()

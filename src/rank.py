@@ -96,7 +96,7 @@ def rank_bullets(master_resume, job_requirements_text):
     if not all_bullets:
         return ranked_resume
         
-    logging.info(f"Batch embedding {len(all_bullets)} bullets...")
+    logging.info(f"   -> Batch embedding {len(all_bullets)} bullets...")
     bullet_embeddings = get_embeddings(all_bullets, client)
     
     # Data structures to hold scored bullets grouped by parent item

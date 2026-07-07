@@ -115,7 +115,7 @@ CRITICAL REMINDER: Weave in relevant ATS keywords naturally across the resume, b
 Respond ONLY with the rewritten JSON array containing the items exactly as structured above. Do not include markdown blocks like ```json.
 """
         try:
-            logging.info(f"Rewriting {len(items)} {section_name} items in a batched API call...")
+            logging.info(f"   -> Rewriting {len(items)} {section_name} items in a batched API call...")
             time.sleep(1) # brief pause to prevent rate limiting
             response = generate_content_with_fallback(client, prompt, temperature=0.15)
             content = response.text.strip()
@@ -236,7 +236,7 @@ RULES:
 5. Remove skills that are clearly irrelevant to this specific job.
 6. CRITICAL FORMATTING REQUIREMENT FOR STRICT 2-PAGE LAYOUT (3 LINES FOR CATEGORIES 1-3, 2 LINES FOR CATEGORIES 4-5):
    - You MUST format the 5 categories with precise character lengths so they render to exact line counts in LaTeX:
-   - Categories 1, 2, and 3 MUST each fill EXACTLY 3 lines in LaTeX! In our small font, this requires the string (Category Name + ": " + comma-separated skills) to have a total character length strictly between 210 and 260 characters (around 12 to 16 distinct skills/technologies per category).
+   - Categories 1, 2, and 3 MUST each fill EXACTLY 3 lines in LaTeX! In our small font, this requires the string (Category Name + ": " + comma-separated skills) to have a total character length strictly between 220 and 260 characters (around 12 to 16 distinct skills/technologies per category).
    - Categories 4 and 5 MUST each fill EXACTLY 2 lines in LaTeX! This requires the string (Category Name + ": " + comma-separated skills) to have a total character length strictly between 135 and 170 characters (around 7 to 10 distinct skills/technologies per category).
    - Do not generate short 1-line categories or overly long 4-line categories! Strictly adhere to 3 lines for the first 3 categories, and 2 lines for the last 2 categories.
 7. Prioritize EXACT keywords from the job posting.

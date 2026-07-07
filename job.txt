@@ -1,38 +1,116 @@
-Software Development Student (Acoustics)
-Job Description:	
-QNX (a division of BlackBerry) is a world leader in the embedded software that drives many of the world's most interesting products. From space cameras to nuclear reactors to autonomous vehicles and sophisticated medical devices, QNX provides the foundation operating system that runs these systems.
-
-The QNX Acoustics Team is where world-class engineering meets real-world impact. If you're passionate about audio technology, signal processing, and real-time embedded systems, this is a place where your work directly shapes the sound experience in millions of vehicles and devices worldwide. You'll collaborate with experts across acoustics, machine learning, and system design to help build high-performance solutions trusted by global OEMs. It's a team that values curiosity, technical depth, and hands-on innovation, giving you the freedom to push boundaries while working on products that truly matter.
-
-Location: Burnaby
-
-Salary: Dependent on number of academic and coop terms completed
-
+Location: Vancouver, BC, Canada
+Employment Type: Temporary Full Time
 Duration: 8 months
+Workplace Type: Hybrid
 
-What you will do:
+ 
 
-Write code in C, C++, C# or Python to modify or exercise QNX Acoustics products for embedded automotive applications
-Debug and analyze issues in the design, implementation and integration of software components
-Write scripts to perform automated tests
+About our Vancouver Office
 
-You will:
+Located in the heart of downtown Vancouver, between the Pacific Ocean and the Coast Mountains, Teck’s Corporate Office sits in one of Canada’s most culturally diverse cities. 
 
-Currently be pursuing post-secondary education in a related field
-Have familiarity with Linux or other UNIX-like operating systems
-Have experience with Windows based GUIs such as Microsoft Visual Studio or similar IDE
-Programming experience in one or more of the following: C, C++, C#, Python
-Excellent communication and interpersonal skills
-Eagerness to learn and solve problems
-Embedded software development, real-time audio programming and signal processing experience are a bonus
-Why join QNX?
+Surrounded by world-renowned nature and globally inspired cuisine, the office brings together many of Teck’s corporate functions - all working toward Teck’s purpose of providing the essential resources the world relies on.
 
-Mentorship & Learning: Access to professional development courses, mentorship programs, and our on-demand learning platform
+ 
 
-Wellness Support: Access to events that support physical, mental and financial wellness. We host wellness sessions, fitness courses, discounts to local gyms, recreational leagues and offer a 24/7 Employee Assistant Program (EAP)
+Application Deadline: We will review applications on a rolling basis
+Duration: 8 months 
 
-Collaborative Culture: Highly collaborative teams and a supportive workplace environment, with organization-wide events and a student social committee
+Positions Available: 1   
 
-Employee Perks: Enjoy snacks, beverages, and discounts at local stores, restaurants, and gyms
+Start Date: September 14, 2026
 
-At QNX, it all starts with you!
+ 
+
+For this exciting position, we are specifically targeting students with a background in Engineering or Computer Science, along with prior coding and business analysis experience. Candidates must be registered at a Canadian post-secondary institution during the full work placement. They must intend to continue their studies for at least one academic term after completing the placement. If you are not currently located near the work location, you must be willing to commute or temporarily relocate for the entire term. A valid study permit and studentship letter will be required where applicable.
+
+ 
+
+Reporting to the Supervisor of Engineering Systems, this opportunity offers practical experience supporting and improving digital tools and software. These tools enable mine planning and engineering. They cover blasting operations, reserves and resources management, and geotechnical systems. This role not only allows you to work closely with industry professionals but also provides exposure to new technologies and real-world projects.
+
+ 
+
+You will have opportunities for both technical and non-technical work, vendor engagement, delivery and sustainment, process improvement, project management, and innovation. This position offers a nice mix of business analysis and technical problem-Solving.
+
+ 
+
+Don’t miss out on this opening to be part of one of Canada’s leading mining companies and join our team!
+
+Why consider Teck Resources Limited for your Co-op placement?
+At Teck, we offer more than just a job – we provide a comprehensive student experience comprised of relevant, hands-on work, vibrant social activities, extensive networking opportunities, and rich professional development. With captivating projects set against stunning backdrops, a culture of inclusivity and collaboration, and boundless opportunities to learn, grow, and have fun, joining us means embracing a fulfilling and dynamic co-op adventure. 
+
+ 
+
+In addition to excellent compensation, Teck co-ops receive a variety of advantages, including but not limited to:
+
+Financial assistance to help with travel costs and co-op fees
+
+Opportunity to develop technical skills and gain practical experience while applying academic knowledge to real-world mining operations and projects 
+
+Enjoy mentorship and guidance from experienced specialists in their respective field
+
+Receive primary consideration for professional positions upon graduation
+
+Key Responsibilities
+Be a courageous safety leader, adhering to and sponsoring safety and environmental rules and procedures
+Plan and implement updates to existing systems and assist in delivering new solutions in the engineering systems space—including Drill and Blast, Geology, and Geotechnical systems— through activities such as system updates, enhancements, and occasional development work
+Support engagement and sustainment activities for systems (including incident, problem, defect, and improvement management)
+Coordinate efforts to deliver resources with other teams and groups within the Digital Operations, Technology, and Innovation department
+Test, analyze, and provide quality assurance for software solutions in place for mining engineering
+Contribute to software development and testing activities, providing chances to assist in development tasks such as unit and integration testing
+Build systems specifications documents as well as external systems design documentation
+Provide timely application support and vendor engagement to ensure resolution of support-related issues when required
+Elicit detailed functional and non-functional requirements, as well as process optimization activities, to ensure business needs and requirements are met
+Assist with estimates for software development and testing, and support small to medium-sized software implementations
+Gain exposure to modern software practices and tools, with opportunities to contribute to system improvements, integrations, and technical activities as needed
+Be interested in business analysis elements such as requirements gathering, stakeholder engagement, documentation, and process improvement
+Qualifications
+Undergraduate bachelor’s degree in Computer Science or Engineering
+Programming experience in C# (.NET) is required
+Experience working with .NET technologies is required
+Strong Understanding of SQL, data modeling, and experience with tools like SQL Server, SSRS, and Power BI is required
+Strong troubleshooting and problem-solving skills
+Excellent written and verbal communication skills
+Previous experience in System/Business analysis
+Curious to learn more about the mining industry and Mining Engineering systems technical analysis
+Ability to work efficiently independently as well as part of a team
+Confirmed ability to learn new technologies and platforms quickly, accurately, and efficiently, and demonstrated experience in requirements analysis and specification
+Self-directed and motivated by sophisticated technical and business challenges, with the ability to manage several projects and work schedules simultaneously
+A strong “make it happen,” positive, adaptable, and constructive mature work ethic
+Understanding of analytics, quality assurance, and system implementation processes
+Ability to articulate complex concepts clearly and in a way that a diverse audience would understand
+Nice to have:
+Proficiency in the Spanish language
+Exposure to MS Azure DevOps or similar tools
+Python experience
+Open-pit mining experience and/or a geology background
+Previous experience in SCCM, ServiceNow, and software package creation and deployment
+ 
+
+Why choose a Co-op with Teck? 
+
+At Teck, we offer more than just a job – we provide a comprehensive student experience comprised of relevant, hands-on work, vibrant social activities, extensive networking opportunities, and rich professional development.
+
+With captivating projects set against stunning backdrops, a culture of inclusivity and collaboration, and boundless opportunities to learn, grow, and have fun, joining us means embracing a fulfilling and dynamic co-op adventure. 
+
+ 
+
+Pay Range: CAD $4,833 - $6,125
+
+The actual amount offered is determined based on the successful candidate’s relevant experience, skills, and competencies and considers internal equity.
+
+ 
+
+In addition, our Co-ops receive a variety of advantages including:
+
+Financial assistance to help with travel costs and co-op fees 
+Opportunity to develop technical skills and gain practical experience while applying academic knowledge to real-world mining operations and projects 
+Enjoy mentorship and guidance from experienced specialists in their respective fields 
+Receive primary consideration for professional positions upon graduation 
+ 
+
+Apply with us 
+
+Take the next step in your career by applying for the Engineering Systems Co-op role. We review applications on a rolling basis and encourage you to apply, even if your background doesn’t match every requirement. We value diversity and are committed to an inclusive, barrier-free hiring process. Reasonable accommodations are available upon request.
+
+ 
